@@ -10,51 +10,264 @@
 };
 
 / {
-        keymap {
-                compatible = "zmk,keymap";
+  macros {
+    ZMK_MACRO(prv_virt_dsk,
+      wait-ms = <20>;
+      tap-ms = <20>;
+      bindings = <&kp LCTRL &kp LGUI &kp LEFT>;
+    )
+    ZMK_MACRO(nxt_virt_dsk,
+      wait-ms = <20>;
+      tap-ms = <20>;
+      bindings = <&kp LCTRL &kp LGUI &kp RIGHT>;
+    )
+    ZMK_MACRO(prv_tab,
+      wait-ms = <20>;
+      tap-ms = <20>;
+      bindings = <&kp LCTRL &kp LSHFT &kp TAB>;
+    )
+    ZMK_MACRO(nxt_tab,
+      wait-ms = <20>;
+      tap-ms = <20>;
+      bindings = <&kp LCTRL &kp TAB>;
+    )
+    ZMK_MACRO(ctrl_alt_tab,
+      wait-ms = <20>;
+      tap-ms = <20>;
+      bindings = <&kp LCTRL &kp LALT &kp TAB>;
+    )
+    ZMK_MACRO(gui_shf_lft,
+      wait-ms = <20>;
+      tap-ms = <20>;
+      bindings = <&kp LGUI &kp LSHFT &kp LEFT>;
+    )
+    ZMK_MACRO(gui_shf_rgt,
+      wait-ms = <20>;
+      tap-ms = <20>;
+      bindings = <&kp LGUI &kp LSHFT &kp RIGHT>;
+    )
+    ZMK_MACRO(snp_win_lft,
+      wait-ms = <20>;
+      tap-ms = <20>;
+      bindings = <&kp LGUI &kp LEFT>;
+    )
+    ZMK_MACRO(snp_win_rgt,
+      wait-ms = <20>;
+      tap-ms = <20>;
+      bindings = <&kp LGUI &kp RIGHT>;
+    )
+    ZMK_MACRO(win_e,
+      wait-ms = <20>;
+      tap-ms = <20>;
+      bindings = <&kp LGUI &kp E>;
+    )
+    ZMK_MACRO(ctrl_shft_x,
+      wait-ms = <20>;
+      tap-ms = <20>;
+      bindings = <&kp LCTRL &kp LSHFT &kp X>;
+    )
+    ZMK_MACRO(ctrl_alt_shft,
+      wait-ms = <20>;
+      tap-ms = <20>;
+      bindings = <&kp LCTRL &kp LALT &kp LSHFT>;
+    )
+    ZMK_MACRO(undo,
+      wait-ms = <20>;
+      tap-ms = <20>;
+      bindings = <&kp LCTRL &kp Z>;
+    )
+    ZMK_MACRO(cut,
+      wait-ms = <20>;
+      tap-ms = <20>;
+      bindings = <&kp LCTRL &kp X>;
+    )
+    ZMK_MACRO(copy,
+      wait-ms = <20>;
+      tap-ms = <20>;
+      bindings = <&kp LCTRL &kp C>;
+    )
+    ZMK_MACRO(paste,
+      wait-ms = <20>;
+      tap-ms = <20>;
+      bindings = <&kp LCTRL &kp V>;
+    )
+    ZMK_MACRO(git_graph,
+      wait-ms = <20>;
+      tap-ms = <20>;
+      bindings = <&kp LCTRL &kp LALT &kp LGUI &kp LSHFT &kp G>;
+    )
+    ZMK_MACRO(term,
+      wait-ms = <20>;
+      tap-ms = <20>;
+      bindings = <&kp LCTRL &kp GRAVE>;
+    )
+    ZMK_MACRO(prv_term,
+      wait-ms = <20>;
+      tap-ms = <20>;
+      bindings = <&kp LCTRL &kp PG_UP>;
+    )
+    ZMK_MACRO(nxt_term,
+      wait-ms = <20>;
+      tap-ms = <20>;
+      bindings = <&kp LCTRL &kp PG_DN>;
+    )
+    ZMK_MACRO(new_term,
+      wait-ms = <20>;
+      tap-ms = <20>;
+      bindings = <&kp LCTRL &kp LSHFT &kp GRAVE>;
+    )
+    ZMK_MACRO(folder_up,
+      wait-ms = <20>;
+      tap-ms = <20>;
+      bindings = <&kp LCTRL &kp LALT &kp LGUI &kp LSHFT &kp U>;
+    )
+    };
+};
 
-                default_layer {
-                        label = "QWERTY";
-// -----------------------------------------------------------------------------------------
-// |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
-// | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
-// | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
-//                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
-                        bindings = <
-   &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
-   &kp LCTRL &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
-   &kp LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp ESC
-                  &kp LGUI &mo 1 &kp SPACE   &kp RET &mo 2 &kp RALT
-                        >;
-                };
-                lower_layer {
-                        label = "NUMBER";
-// -----------------------------------------------------------------------------------------
-// |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
-// | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
-// | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
-                        bindings = <
-   &kp TAB    &kp N1       &kp N2       &kp N3       &kp N4       &kp N5         &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 &kp BSPC
-   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
-   &kp LSHFT  &trans       &trans       &trans       &trans       &trans         &trans   &trans   &trans &trans    &trans &trans
-                          	        &kp LGUI     &trans       &kp SPACE      &kp RET  &trans   &kp RALT
-                        >;
-                };
+/ {
+  keymap {
+    compatible = "zmk,keymap";
 
-                raise_layer {
-                        label = "SYMBOL";
-// -----------------------------------------------------------------------------------------
-// |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
-// | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
-// | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
-                        bindings = <
-   &kp  TAB  &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp STAR &kp LPAR &kp RPAR &kp BSPC
-   &kp LCTRL &trans   &trans &trans   &trans   &trans      &kp MINUS &kp EQUAL &kp LBKT &kp RBKT &kp BSLH &kp GRAVE
-   &kp LSHFT &trans   &trans &trans   &trans   &trans      &kp UNDER &kp PLUS  &kp LBRC &kp RBRC &kp PIPE &kp TILDE
-                    	     &kp LGUI &trans   &kp SPACE   &kp RET   &trans    &kp RALT
-                        >;
-                };
-        };
+// &out OUT_TOG
+// OUT_USB	Prefer sending to USB
+// OUT_BLE	Prefer sending to the current bluetooth profile
+// OUT_TOG	Toggle between USB and BLE
+
+// Mouse keys
+// https://github.com/manna-harbour/miryoku_zmk#mouse-keys
+// https://github.com/doththouevenhoist/zmk-config-Corne-ish-Zen/blob/4cafe5ca22919e84e826a7413b5f4b092ada6730/config/corne-ish_zen.keymap#L10
+
+    base_layer {
+      label = "QWERTY";
+      bindings = <
+      // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
+      // ├      \      ┼      '      ┼      ,      ┼      .      ┼      P      ┼      Y      ┤ ├      F      ┼      G      ┼      C      ┼      R      ┼      L      ┼      /      ┤
+           &kp BSLH      &kp SQT       &kp COMMA     &kp DOT       &kp P         &kp Y           &kp F         &kp G         &kp C         &kp R         &kp L         &kp FSLH
+      // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+      // ├     LFT     ┼      A      ┼      O      ┼      E      ┼      U      ┼      I      ┤ ├      D      ┼      H      ┼      T      ┼      N      ┼      S      ┼     RGT     ┤
+           &kp LEFT      &mt LSHFT A   &mt LALT O    &mt LGUI E    &mt LCTRL U   &kp I           &kp D         &mt LCTRL H   &mt LGUI T    &mt LALT N    &mt LSHFT S   &kp RIGHT
+      // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+      // ├      `      ┼      ;      ┼      Q      ┼      J      ┼      K      ┼      X      ┤ ├      B      ┼      M      ┼      W      ┼      V      ┼      Z      ┼      -      ┤
+           &kp GRAVE     &kp SEMI      &mt RALT Q    &kp J         &kp K         &kp X           &kp B         &kp M         &kp W         &mt RALT V    &kp Z         &kp MINUS
+      // ╰───────────────────────────┴─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┴───────────────────────────╯
+      //                                           ├  ESC / LT5  ┼  SPC / LT2  ┼  TAB / LT3  ┤ ├  RET / LT4  ┼  BKSP / LT1 ┼  DEL / LT6  ┤
+                                                     &lt 5 ESC     &lt 2 SPACE   &lt 3 TAB       &lt 4 RET     &lt 1 BSPC    &lt 6 DEL
+      //                                           ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
+      >;
+    };
+
+    numbers_layer {
+      label = "NUMBER";
+      bindings = <
+      // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
+      // ├      \      ┼      !      ┼      @      ┼      #      ┼      $      ┼      %      ┤ ├      ^      ┼      &      ┼      *      ┼      (      ┼      )      ┼      /      ┤
+           &kp BSLH      &kp EXCL      &kp AT        &kp HASH      &kp DOLLAR    &kp PERCENT     &kp CARET     &kp AMPS      &kp ASTRK     &kp LPAR      &kp RPAR      &kp FSLH
+      // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+      // ├     LFT     ┼      1      ┼      2      ┼      3      ┼      4      ┼      5      ┤ ├      6      ┼      7      ┼      8      ┼      9      ┼      0      ┼     RGT     ┤
+           &kp LEFT      &mt LSHFT N1  &mt LALT N2   &mt LGUI N3   &mt LCTRL N4  &kp N5          &kp N6        &mt LCTRL N7  &mt LGUI N8   &mt LALT N9   &mt LSHFT N0  &kp RIGHT
+      // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+      // ├      `      ┼      [      ┼      ]      ┼      (      ┼      )      ┼      .      ┤ ├             ┼      +      ┼      =      ┼      {      ┼      }      ┼      -      ┤
+           &kp GRAVE     &kp LBKT      &mt RBKT      &kp LPAR      &kp RPAR      &kp DOT         &none         &kp PLUS      &kp EQUAL     &mt RALT LBRC &kp RBRC      &kp MINUS
+      // ╰───────────────────────────┴─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┴───────────────────────────╯
+      //                                           ├     ESC     ┼     SPC     ┼     TAB     ┤ ├             ┼             ┼     DEL     ┤
+                                                     &kp ESC       &kp SPACE     &kp TAB         &none         &trans        &kp DEL
+      //                                           ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
+      >;
+    };
+
+    nav_layer {
+      label = "NAV";
+      bindings = <
+      // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
+      // ├             ┼             ┼             ┼ PRV VIR DSK ┼ NXT VIR DSK ┼             ┤ ├ CTRL ALT TAB┼             ┼   PAGE UP   ┼  PAGE DOWN  ┼             ┼             ┤
+           &none         &none         &none        &prv_virt_dsk &nxt_virt_dsk  &none          &ctrl_alt_tab  &none         &kp PG_UP     &kp PG_DN     &none         &none
+      // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+      // ├             ┼    LSHFT    ┼     LALT    ┼     LGUI    ┼    LCTRL    ┼             ┤ ├     HOME    ┼    LEFT     ┼     UP      ┼     DOWN    ┼    RIGHT    ┼     END     ┤
+           &none         &kp LSHFT     &kp LALT      &kp LGUI      &kp LCTRL     &none           &kp HOME      &kp LEFT      &kp UP        &kp DOWN      &kp RIGHT     &kp END
+      // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+      // ├             ┼             ┼     RALT    ┼  PREV TAB   ┼  NEXT TAB   ┼             ┤ ├     SPC     ┼ WIN PRV MON ┼ SNP WIN LFT ┼ SNP WIN RGT ┼ WIN NXT MON ┼ CONTEXT MENU┤
+           &none         &none         &kp RALT      &prv_tab      &nxt_tab      &none           &kp SPACE     &gui_shf_lft  &snp_win_lft  &snp_win_rgt  &gui_shf_rgt  &kp K_APP
+      // ╰───────────────────────────┴─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┴───────────────────────────╯
+      //                                           ├             ┼             ┼             ┤ ├    ENTER    ┼    BKSP     ┼     DEL     ┤
+                                                     &none         &trans        &none           &kp RET       &kp BSPC      &kp DEL
+      //                                           ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
+      >;
+    };
+
+    mouse_layer {
+      label = "MOUSE";
+      bindings = <
+      // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
+      // ├             ┼             ┼             ┼             ┼             ┼             ┤ ├ CTRL ALT TAB┼             ┼   PAGE UP   ┼  PAGE DOWN  ┼             ┼             ┤
+           &none         &none         &none         &none         &none         &none          &ctrl_alt_tab  &none         &kp PG_UP     &kp PG_DN     &none         &none
+      // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+      // ├             ┼    LSHFT    ┼     LALT    ┼     LGUI    ┼    LCTRL    ┼             ┤ ├     HOME    ┼    LEFT     ┼     UP      ┼     DOWN    ┼    RIGHT    ┼     END     ┤
+           &none         &kp LSHFT     &kp LALT      &kp LGUI      &kp LCTRL     &none           &kp HOME      &kp LEFT      &kp UP        &kp DOWN      &kp RIGHT     &kp END
+      // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+      // ├             ┼             ┼     RALT    ┼  PREV TAB   ┼  NEXT TAB   ┼             ┤ ├     SPC     ┼ WIN PRV MON ┼ SNP WIN LFT ┼ SNP WIN RGT ┼ WIN NXT MON ┼ CONTEXT MENU┤
+           &none         &none         &kp RALT      &prv_tab      &nxt_tab      &none           &kp SPACE     &gui_shf_lft  &snp_win_lft  &snp_win_rgt  &gui_shf_rgt  &kp K_APP
+      // ╰───────────────────────────┴─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┴───────────────────────────╯
+      //                                           ├             ┼             ┼             ┤ ├    ENTER    ┼    BKSP     ┼     DEL     ┤
+                                                     &none         &trans        &none           &kp RET       &kp BSPC      &kp DEL
+      //                                           ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
+      >;
+    };
+
+    function_layer {
+      label = "FUNCTION";
+      bindings = <
+      // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
+      // ├   INSERT    ┼     F1      ┼     F2      ┼     F3      ┼     F4      ┼ Print Screen┤ ├             ┼             ┼             ┼             ┼             ┼             ┤
+           &INSERT       &kp F1        &kp F2        &kp F3        &kp F4        &PSCRN          &none         &none         &none         &none         &none         &none
+      // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+      // ├  CAPS LOCK  ┼     F5      ┼     F6      ┼     F7      ┼     F8      ┼ Scroll Lock ┤ ├             ┼    LCTRL    ┼     LGUI    ┼     LALT    ┼    LSHFT    ┼             ┤
+           &CAPS         &kp F5        &kp F6        &kp F7        &kp F8        &SCROLLLOCK     &none         &kp LCTRL     &kp LGUI      &kp LALT      &kp LSHFT     &none
+      // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+      // ├             ┼     F9      ┼     F10     ┼     F11     ┼     F12     ┼   PAUSE     ┤ ├             ┼             ┼             ┼     RALT    ┼             ┼             ┤
+           &none         &kp F9        &kp F10       &kp F11       &kp F12       &PAUSE_BREAK    &none         &none         &none         &kp RALT      &none         &none
+      // ╰───────────────────────────┴─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┴───────────────────────────╯
+      //                                           ├     ESC     ┼     SPC     ┼     TAB     ┤ ├             ┼             ┼             ┤
+                                                     &kp ESC       &kp SPACE     &kp TAB         &trans        &none         &none
+      //                                           ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
+      >;
+    };
+
+    misc1_layer {
+      label = "MISC 1";
+      bindings = <
+      // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
+      // ├ CTR ALT SHF ┼             ┼             ┼ Win Explorer┼             ┼             ┤ ├             ┼             ┼             ┼             ┼             ┼             ┤
+          &ctrl_alt_shft &none         &none         &win_e        &none         &none           &none         &none         &none         &none         &none         &none
+      // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+      // ├             ┼             ┼             ┼             ┼             ┼  1Password  ┤ ├             ┼ Media Prev  ┼  Vol Down   ┼   Vol Up    ┼ Media Next  ┼             ┤
+           &none         &none         &none         &none         &none         &ctrl_shft_x    &none         &kp C_PREV   &kp C_VOL_DN  &kp C_VOL_UP   &kp C_NEXT    &none
+      // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+      // ├             ┼    Undo     ┼     Cut     ┼    Copy     ┼    Paste    ┼             ┤ ├             ┼             ┼             ┼             ┼             ┼             ┤
+           &none         &undo         &cut          &copy         &paste        &none           &none         &none         &none         &none         &none         &none
+      // ╰───────────────────────────┴─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┴───────────────────────────╯
+      //                                           ├             ┼             ┼             ┤ ├             ┼             ┼             ┤
+                                                     &trans        &none         &none           &C_STOP       &C_PP         &C_MUTE
+      //                                           ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
+      >;
+    };
+
+    misc2_layer {
+      label = "MISC 2";
+      bindings = <
+      // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
+      // ├    RESET    ┼             ┼             ┼             ┼             ┼             ┤ ├             ┼ Folder Up   ┼             ┼             ┼             ┼    RESET    ┤
+           &reset        &none         &none         &none         &none         &none           &none         &folder_up    &none         &none         &none         &reset
+      // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+      // ├ Clr BT prof ┼ BT prof 0   ┼ BT prof 1   ┼ BT prof 2   ┼ BT prof 3   ┼ BT prof 4   ┤ ├ Git Graph   ┼  Terminal   ┼ Prev Term   ┼ Next Term   ┼ New Term    ┼             ┤
+           &BT_CLR       &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &git_graph    &term         &prv_term     &nxt_term     &new_term     &none
+      // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+      // ├  BOOTLOADER ┼             ┼             ┼             ┼             ┼             ┤ ├             ┼             ┼             ┼             ┼             ┼  BOOTLOADER ┤
+           &bootloader   &none         &none         &none         &none         &none           &none         &none         &none         &none         &none         &bootloader
+      // ╰───────────────────────────┴─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┴───────────────────────────╯
+      //                                           ├             ┼             ┼             ┤ ├             ┼             ┼             ┤
+                                                     &none         &none         &none           &none         &none         &trans
+      //                                           ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
+      >;
+    };
+  };
 };
