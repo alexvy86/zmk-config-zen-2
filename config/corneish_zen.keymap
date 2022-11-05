@@ -1,12 +1,19 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/mouse.h>
 
 / {
   chosen {
     zmk,matrix_transform = &default_transform;
     //zmk,matrix_transform = &five_column_transform;
   };
+};
+
+// Configure mod-tap
+&mt {
+  flavor = "tap-preferred";
+  tapping-term-ms = <225>;
 };
 
 / {
