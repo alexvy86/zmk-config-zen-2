@@ -150,8 +150,8 @@
       // ├      `      ┼      ;      ┼      Q      ┼      J      ┼      K      ┼      X      ┤ ├      B      ┼      M      ┼      W      ┼      V      ┼      Z      ┼      -      ┤
            &kp GRAVE     &kp SEMI      &mt RALT Q    &kp J         &kp K         &kp X           &kp B         &kp M         &kp W         &mt RALT V    &kp Z         &kp MINUS
       // ╰───────────────────────────┴─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┴───────────────────────────╯
-      //                                           ├  ESC / LT5  ┼  SPC / LT2  ┼  TAB / LT3  ┤ ├  RET / LT4  ┼  BKSP / LT1 ┼  DEL / LT6  ┤
-                                                     &lt 5 ESC     &lt 2 SPACE   &lt 3 TAB       &lt 4 RET     &lt 1 BSPC    &lt 6 DEL
+      //                                           ├  ESC / LT5  ┼  SPC / LT3  ┼  TAB / LT2  ┤ ├  RET / LT1  ┼  BKSP / LT4 ┼  DEL / LT6  ┤
+                                                     &lt 5 ESC     &lt 3 SPACE   &lt 2 TAB       &lt 1 RET     &lt 4 BSPC    &lt 6 DEL
       //                                           ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
       >;
     };
