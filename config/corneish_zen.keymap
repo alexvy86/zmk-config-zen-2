@@ -218,13 +218,13 @@
       bindings = <
       // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
       // ├   INSERT    ┼     F1      ┼     F2      ┼     F3      ┼     F4      ┼ Print Screen┤ ├             ┼             ┼             ┼             ┼             ┼             ┤
-           &INSERT       &kp F1        &kp F2        &kp F3        &kp F4        &PSCRN          &none         &none         &none         &none         &none         &none
+           &kp INSERT    &kp F1        &kp F2        &kp F3        &kp F4        &kp PSCRN       &none         &none         &none         &none         &none         &none
       // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
       // ├  CAPS LOCK  ┼     F5      ┼     F6      ┼     F7      ┼     F8      ┼ Scroll Lock ┤ ├             ┼    LCTRL    ┼     LGUI    ┼     LALT    ┼    LSHFT    ┼             ┤
-           &CAPS         &kp F5        &kp F6        &kp F7        &kp F8        &SCROLLLOCK     &none         &kp LCTRL     &kp LGUI      &kp LALT      &kp LSHFT     &none
+           &kp CAPS      &kp F5        &kp F6        &kp F7        &kp F8        &kp SLCK        &none         &kp LCTRL     &kp LGUI      &kp LALT      &kp LSHFT     &none
       // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
       // ├             ┼     F9      ┼     F10     ┼     F11     ┼     F12     ┼   PAUSE     ┤ ├             ┼             ┼             ┼     RALT    ┼             ┼             ┤
-           &none         &kp F9        &kp F10       &kp F11       &kp F12       &PAUSE_BREAK    &none         &none         &none         &kp RALT      &none         &none
+           &none         &kp F9        &kp F10       &kp F11       &kp F12       &kp PAUSE_BREAK &none         &none         &none         &kp RALT      &none         &none
       // ╰───────────────────────────┴─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┴───────────────────────────╯
       //                                           ├     ESC     ┼     SPC     ┼     TAB     ┤ ├             ┼             ┼             ┤
                                                      &kp ESC       &kp SPACE     &kp TAB         &trans        &none         &none
