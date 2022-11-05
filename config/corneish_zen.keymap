@@ -167,7 +167,7 @@
            &kp LEFT      &mt LSHFT N1  &mt LALT N2   &mt LGUI N3   &mt LCTRL N4  &kp N5          &kp N6        &mt LCTRL N7  &mt LGUI N8   &mt LALT N9   &mt LSHFT N0  &kp RIGHT
       // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
       // ├      `      ┼      [      ┼      ]      ┼      (      ┼      )      ┼      .      ┤ ├             ┼      +      ┼      =      ┼      {      ┼      }      ┼      -      ┤
-           &kp GRAVE     &kp LBKT      &mt RBKT      &kp LPAR      &kp RPAR      &kp DOT         &none         &kp PLUS      &kp EQUAL     &mt RALT LBRC &kp RBRC      &kp MINUS
+           &kp GRAVE     &kp LBKT     &mt RALT RBKT  &kp LPAR      &kp RPAR      &kp DOT         &none         &kp PLUS      &kp EQUAL     &mt RALT LBRC &kp RBRC      &kp MINUS
       // ╰───────────────────────────┴─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┴───────────────────────────╯
       //                                           ├     ESC     ┼     SPC     ┼     TAB     ┤ ├             ┼             ┼     DEL     ┤
                                                      &kp ESC       &kp SPACE     &kp TAB         &none         &trans        &kp DEL
