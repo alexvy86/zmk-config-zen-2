@@ -150,8 +150,8 @@
       // ├      `      ┼      ;      ┼      Q      ┼      J      ┼      K      ┼      X      ┤ ├      B      ┼      M      ┼      W      ┼      V      ┼      Z      ┼      -      ┤
            &kp GRAVE     &kp SEMI      &mt RALT Q    &kp J         &kp K         &kp X           &kp B         &kp M         &kp W         &mt RALT V    &kp Z         &kp MINUS
       // ╰───────────────────────────┴─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┴───────────────────────────╯
-      //                                           ├  ESC / LT5  ┼  SPC / LT3  ┼  TAB / LT2  ┤ ├  RET / LT1  ┼  BKSP / LT4 ┼  DEL / LT6  ┤
-                                                     &lt 5 ESC     &lt 3 SPACE   &lt 2 TAB       &lt 1 RET     &lt 4 BSPC    &lt 6 DEL
+      //                                           ├  ESC / LT5  ┼  TAB / LT3  ┼  SPC / LT2  ┤ ├  BKSP / LT1 ┼  RET / LT4  ┼  DEL / LT6  ┤
+                                                     &lt 5 ESC     &lt 3 TAB     &lt 2 SPACE     &lt 1 BSPC    &lt 4 RET     &lt 6 DEL
       //                                           ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
       >;
     };
@@ -169,8 +169,8 @@
       // ├      `      ┼      [      ┼      ]      ┼      (      ┼      )      ┼      .      ┤ ├             ┼      +      ┼      =      ┼      {      ┼      }      ┼      -      ┤
            &kp GRAVE     &kp LBKT     &mt RALT RBKT  &kp LPAR      &kp RPAR      &kp DOT         &none         &kp PLUS      &kp EQUAL     &mt RALT LBRC &kp RBRC      &kp MINUS
       // ╰───────────────────────────┴─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┴───────────────────────────╯
-      //                                           ├     ESC     ┼     SPC     ┼     TAB     ┤ ├             ┼             ┼     DEL     ┤
-                                                     &kp ESC       &kp SPACE     &kp TAB         &none         &trans        &kp DEL
+      //                                           ├     ESC     ┼     TAB     ┼    SPACE    ┤ ├             ┼             ┼     DEL     ┤
+                                                     &kp ESC       &kp TAB       &kp SPACE         &trans      &none         &kp DEL
       //                                           ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
       >;
     };
@@ -188,8 +188,8 @@
       // ├             ┼             ┼     RALT    ┼  PREV TAB   ┼  NEXT TAB   ┼             ┤ ├     SPC     ┼ WIN PRV MON ┼ SNP WIN LFT ┼ SNP WIN RGT ┼ WIN NXT MON ┼ CONTEXT MENU┤
            &none         &none         &kp RALT      &prv_tab      &nxt_tab      &none           &kp SPACE     &gui_shf_lft  &snp_win_lft  &snp_win_rgt  &gui_shf_rgt  &kp K_APP
       // ╰───────────────────────────┴─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┴───────────────────────────╯
-      //                                           ├             ┼             ┼             ┤ ├    ENTER    ┼    BKSP     ┼     DEL     ┤
-                                                     &none         &trans        &none           &kp RET       &kp BSPC      &kp DEL
+      //                                           ├             ┼             ┼             ┤ ├    BKSP     ┼    ENTER    ┼     DEL     ┤
+                                                     &none         &none         &trans          &kp BSPC      &kp RET       &kp DEL
       //                                           ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
       >;
     };
@@ -207,8 +207,8 @@
       // ├             ┼             ┼     RALT    ┼  PREV TAB   ┼  NEXT TAB   ┼             ┤ ├     SPC     ┼ WIN PRV MON ┼ SNP WIN LFT ┼ SNP WIN RGT ┼ WIN NXT MON ┼ CONTEXT MENU┤
            &none         &none         &kp RALT      &prv_tab      &nxt_tab      &none           &kp SPACE     &gui_shf_lft  &snp_win_lft  &snp_win_rgt  &gui_shf_rgt  &kp K_APP
       // ╰───────────────────────────┴─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┴───────────────────────────╯
-      //                                           ├             ┼             ┼             ┤ ├    ENTER    ┼    BKSP     ┼     DEL     ┤
-                                                     &none         &trans        &none           &kp RET       &kp BSPC      &kp DEL
+      //                                           ├             ┼             ┼             ┤ ├    BKSP     ┼    ENTER    ┼     DEL     ┤
+                                                     &none         &trans        &none           &kp BSPC      &kp RET       &kp DEL
       //                                           ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
       >;
     };
@@ -226,8 +226,8 @@
       // ├             ┼     F9      ┼     F10     ┼     F11     ┼     F12     ┼   PAUSE     ┤ ├             ┼             ┼             ┼     RALT    ┼             ┼             ┤
            &none         &kp F9        &kp F10       &kp F11       &kp F12       &kp PAUSE_BREAK &none         &none         &none         &kp RALT      &none         &none
       // ╰───────────────────────────┴─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┴───────────────────────────╯
-      //                                           ├     ESC     ┼     SPC     ┼     TAB     ┤ ├             ┼             ┼             ┤
-                                                     &kp ESC       &kp SPACE     &kp TAB         &trans        &none         &none
+      //                                           ├     ESC     ┼     TAB     ┼    SPACE    ┤ ├             ┼             ┼             ┤
+                                                     &kp ESC       &kp TAB       &kp SPACE       &none         &trans        &none
       //                                           ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
       >;
     };
