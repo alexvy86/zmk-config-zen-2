@@ -1,5 +1,9 @@
 {
 	"files.associations": {
 		"*.keymap": "c++"
-	}
+	},
+
+	// Skip Fira Code from User Settins, because it causes slight misalignments with the line/corner characters
+	// used in the ASCII layout for the keyboard.
+	"editor.fontFamily": "Consolas, 'Courier New', monospace"
 }
