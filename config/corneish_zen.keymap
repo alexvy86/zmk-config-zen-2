@@ -20,57 +20,79 @@
     ZMK_MACRO(prv_virt_dsk,
       wait-ms = <20>;
       tap-ms = <20>;
-      bindings = <&kp LCTRL &kp LGUI &kp LEFT>;
+      bindings = <&macro_press &kp LCTRL &kp LGUI>
+               , <&macro_tap &kp LEFT>
+               , <&macro_release &kp LCTRL &kp LGUI>;
     )
     ZMK_MACRO(nxt_virt_dsk,
       wait-ms = <20>;
       tap-ms = <20>;
-      bindings = <&kp LCTRL &kp LGUI &kp RIGHT>;
+      bindings = <&macro_press &kp LCTRL &kp LGUI>
+               , <&macro_tap &kp RIGHT>
+               , <&macro_release &kp LCTRL &kp LGUI>;
     )
     ZMK_MACRO(prv_tab,
       wait-ms = <20>;
       tap-ms = <20>;
-      bindings = <&kp LCTRL &kp LSHFT &kp TAB>;
+      bindings = <&macro_press &kp LCTRL &kp LSHFT>
+               , <&macro_tap &kp TAB>
+               , <&macro_release &kp LCTRL &kp LSHFT>;
     )
     ZMK_MACRO(nxt_tab,
       wait-ms = <20>;
       tap-ms = <20>;
-      bindings = <&kp LCTRL &kp TAB>;
+      bindings = <&macro_press &kp LCTRL>
+               , <&macro_tap &kp TAB>
+               , <&macro_release &kp LCTRL>;
     )
     ZMK_MACRO(ctrl_alt_tab,
       wait-ms = <20>;
       tap-ms = <20>;
-      bindings = <&kp LCTRL &kp LALT &kp TAB>;
+      bindings = <&macro_press &kp LCTRL &kp LALT>
+               , <&macro_tap &kp TAB>
+               , <&macro_release &kp LCTRL &kp LALT>;
     )
     ZMK_MACRO(gui_shf_lft,
       wait-ms = <20>;
       tap-ms = <20>;
-      bindings = <&kp LGUI &kp LSHFT &kp LEFT>;
+      bindings = <&macro_press &kp LGUI &kp LSHFT>
+               , <&macro_tap &kp LEFT>
+               , <&macro_release &kp LGUI &kp LSHFT>;
     )
     ZMK_MACRO(gui_shf_rgt,
       wait-ms = <20>;
       tap-ms = <20>;
-      bindings = <&kp LGUI &kp LSHFT &kp RIGHT>;
+      bindings = <&macro_press &kp LGUI &kp LSHFT>
+               , <&macro_tap &kp RIGHT>
+               , <&macro_release &kp LGUI &kp LSHFT>;
     )
     ZMK_MACRO(snp_win_lft,
       wait-ms = <20>;
       tap-ms = <20>;
-      bindings = <&kp LGUI &kp LEFT>;
+      bindings = <&macro_press &kp LGUI>
+               , <&macro_tap &kp LEFT>
+               , <&macro_release &kp LGUI>;
     )
     ZMK_MACRO(snp_win_rgt,
       wait-ms = <20>;
       tap-ms = <20>;
-      bindings = <&kp LGUI &kp RIGHT>;
+      bindings = <&macro_press &kp LGUI>
+               , <&macro_tap &kp RIGHT>
+               , <&macro_release &kp LGUI>;
     )
     ZMK_MACRO(win_e,
       wait-ms = <20>;
       tap-ms = <20>;
-      bindings = <&kp LGUI &kp E>;
+      bindings = <&macro_press &kp LGUI>
+               , <&macro_tap &kp E>
+               , <&macro_release &kp LGUI>;
     )
     ZMK_MACRO(ctrl_shft_x,
       wait-ms = <20>;
       tap-ms = <20>;
-      bindings = <&kp LCTRL &kp LSHFT &kp X>;
+      bindings = <&macro_press &kp LCTRL &kp LSHFT>
+               , <&macro_tap &kp X>
+               , <&macro_release &kp LCTRL &kp LSHFT>;
     )
     ZMK_MACRO(ctrl_alt_shft,
       wait-ms = <20>;
@@ -80,52 +102,72 @@
     ZMK_MACRO(undo,
       wait-ms = <20>;
       tap-ms = <20>;
-      bindings = <&kp LCTRL &kp Z>;
+      bindings = <&macro_press &kp LCTRL>
+               , <&macro_tap &kp Z>
+               , <&macro_release &kp LCTRL>;
     )
     ZMK_MACRO(cut,
       wait-ms = <20>;
       tap-ms = <20>;
-      bindings = <&kp LCTRL &kp X>;
+      bindings = <&macro_press &kp LCTRL>
+               , <&macro_tap &kp X>
+               , <&macro_release &kp LCTRL>;
     )
     ZMK_MACRO(copy,
       wait-ms = <20>;
       tap-ms = <20>;
-      bindings = <&kp LCTRL &kp C>;
+      bindings = <&macro_press &kp LCTRL>
+               , <&macro_tap &kp C>
+               , <&macro_release &kp LCTRL>;
     )
     ZMK_MACRO(paste,
       wait-ms = <20>;
       tap-ms = <20>;
-      bindings = <&kp LCTRL &kp V>;
+      bindings = <&macro_press &kp LCTRL>
+               , <&macro_tap &kp V>
+               , <&macro_release &kp LCTRL>;
     )
     ZMK_MACRO(git_graph,
       wait-ms = <20>;
       tap-ms = <20>;
-      bindings = <&kp LCTRL &kp LALT &kp LGUI &kp LSHFT &kp G>;
+      bindings = <&macro_press &kp LCTRL &kp LALT &kp LGUI &kp LSHFT>
+               , <&macro_tap &kp G>
+               , <&macro_release &kp LCTRL &kp LALT &kp LGUI &kp LSHFT>;
     )
     ZMK_MACRO(term,
       wait-ms = <20>;
       tap-ms = <20>;
-      bindings = <&kp LCTRL &kp GRAVE>;
+      bindings = <&macro_press &kp LCTRL>
+               , <&macro_tap &kp GRAVE>
+               , <&macro_release &kp LCTRL>;
     )
     ZMK_MACRO(prv_term,
       wait-ms = <20>;
       tap-ms = <20>;
-      bindings = <&kp LCTRL &kp PG_UP>;
+      bindings = <&macro_press &kp LCTRL>
+               , <&macro_tap &kp PG_UP>
+               , <&macro_release &kp LCTRL>;
     )
     ZMK_MACRO(nxt_term,
       wait-ms = <20>;
       tap-ms = <20>;
-      bindings = <&kp LCTRL &kp PG_DN>;
+      bindings = <&macro_press &kp LCTRL>
+               , <&macro_tap &kp PG_DN>
+               , <&macro_release &kp LCTRL>;
     )
     ZMK_MACRO(new_term,
       wait-ms = <20>;
       tap-ms = <20>;
-      bindings = <&kp LCTRL &kp LSHFT &kp GRAVE>;
+      bindings = <&macro_press &kp LCTRL &kp LSHFT>
+               , <&macro_tap &kp V>
+               , <&macro_release &kp LCTRL &kp LSHFT>;
     )
     ZMK_MACRO(folder_up,
       wait-ms = <20>;
       tap-ms = <20>;
-      bindings = <&kp LCTRL &kp LALT &kp LGUI &kp LSHFT &kp U>;
+      bindings = <&macro_press &kp LCTRL &kp LALT &kp LGUI &kp LSHFT>
+               , <&macro_tap &kp U>
+               , <&macro_release &kp LCTRL &kp LALT &kp LGUI &kp LSHFT>;
     )
     };
 };
