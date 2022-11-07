@@ -17,160 +17,34 @@
   global-quick-tap;
 };
 
+// Desktop and tab navigation shortcuts
+#define PRV_VD      LC(LG(LEFT))
+#define NXT_VD      LC(LG(RIGHT))
+#define PRV_TAB     LC(LS(TAB))
+#define NXT_TAB     LC(TAB)
+#define MOV_WIN_LFT LG(LS(LEFT))
+#define MOV_WIN_RGT LG(LS(RIGHT))
+#define SNP_WIN_LFT LG(LEFT)
+#define SNP_WIN_RGT LG(RIGHT)
+#define CTL_ALT_TAB LC(LA(TAB))
+
+// Application shortcuts
+#define GIT_GRAPH LC(LA(LG(LS(G))))
+#define FOLDER_UP LC(LA(LG(LS(U))))
+#define TERM      LC(GRAVE)
+#define NEW_TERM  LC(LS(GRAVE))
+#define PRV_TERM  LC(PG_UP)
+#define NXT_TERM  LC(PG_DN)
+
 / {
   macros {
-    ZMK_MACRO(prv_virt_dsk,
-      wait-ms = <20>;
-      tap-ms = <20>;
-      bindings = <&macro_press &kp LCTRL &kp LGUI>
-               , <&macro_tap &kp LEFT>
-               , <&macro_release &kp LCTRL &kp LGUI>;
-    )
-    ZMK_MACRO(nxt_virt_dsk,
-      wait-ms = <20>;
-      tap-ms = <20>;
-      bindings = <&macro_press &kp LCTRL &kp LGUI>
-               , <&macro_tap &kp RIGHT>
-               , <&macro_release &kp LCTRL &kp LGUI>;
-    )
-    ZMK_MACRO(prv_tab,
-      wait-ms = <20>;
-      tap-ms = <20>;
-      bindings = <&macro_press &kp LCTRL &kp LSHFT>
-               , <&macro_tap &kp TAB>
-               , <&macro_release &kp LCTRL &kp LSHFT>;
-    )
-    ZMK_MACRO(nxt_tab,
-      wait-ms = <20>;
-      tap-ms = <20>;
-      bindings = <&macro_press &kp LCTRL>
-               , <&macro_tap &kp TAB>
-               , <&macro_release &kp LCTRL>;
-    )
-    ZMK_MACRO(ctrl_alt_tab,
-      wait-ms = <20>;
-      tap-ms = <20>;
-      bindings = <&macro_press &kp LCTRL &kp LALT>
-               , <&macro_tap &kp TAB>
-               , <&macro_release &kp LCTRL &kp LALT>;
-    )
-    ZMK_MACRO(gui_shf_lft,
-      wait-ms = <20>;
-      tap-ms = <20>;
-      bindings = <&macro_press &kp LGUI &kp LSHFT>
-               , <&macro_tap &kp LEFT>
-               , <&macro_release &kp LGUI &kp LSHFT>;
-    )
-    ZMK_MACRO(gui_shf_rgt,
-      wait-ms = <20>;
-      tap-ms = <20>;
-      bindings = <&macro_press &kp LGUI &kp LSHFT>
-               , <&macro_tap &kp RIGHT>
-               , <&macro_release &kp LGUI &kp LSHFT>;
-    )
-    ZMK_MACRO(snp_win_lft,
-      wait-ms = <20>;
-      tap-ms = <20>;
-      bindings = <&macro_press &kp LGUI>
-               , <&macro_tap &kp LEFT>
-               , <&macro_release &kp LGUI>;
-    )
-    ZMK_MACRO(snp_win_rgt,
-      wait-ms = <20>;
-      tap-ms = <20>;
-      bindings = <&macro_press &kp LGUI>
-               , <&macro_tap &kp RIGHT>
-               , <&macro_release &kp LGUI>;
-    )
-    ZMK_MACRO(win_e,
-      wait-ms = <20>;
-      tap-ms = <20>;
-      bindings = <&macro_press &kp LGUI>
-               , <&macro_tap &kp E>
-               , <&macro_release &kp LGUI>;
-    )
-    ZMK_MACRO(ctrl_shft_x,
-      wait-ms = <20>;
-      tap-ms = <20>;
-      bindings = <&macro_press &kp LCTRL &kp LSHFT>
-               , <&macro_tap &kp X>
-               , <&macro_release &kp LCTRL &kp LSHFT>;
-    )
-    ZMK_MACRO(ctrl_alt_shft,
-      wait-ms = <20>;
-      tap-ms = <20>;
-      bindings = <&kp LCTRL &kp LALT &kp LSHFT>;
-    )
-    ZMK_MACRO(undo,
-      wait-ms = <20>;
-      tap-ms = <20>;
-      bindings = <&macro_press &kp LCTRL>
-               , <&macro_tap &kp Z>
-               , <&macro_release &kp LCTRL>;
-    )
-    ZMK_MACRO(cut,
-      wait-ms = <20>;
-      tap-ms = <20>;
-      bindings = <&macro_press &kp LCTRL>
-               , <&macro_tap &kp X>
-               , <&macro_release &kp LCTRL>;
-    )
-    ZMK_MACRO(copy,
-      wait-ms = <20>;
-      tap-ms = <20>;
-      bindings = <&macro_press &kp LCTRL>
-               , <&macro_tap &kp C>
-               , <&macro_release &kp LCTRL>;
-    )
-    ZMK_MACRO(paste,
-      wait-ms = <20>;
-      tap-ms = <20>;
-      bindings = <&macro_press &kp LCTRL>
-               , <&macro_tap &kp V>
-               , <&macro_release &kp LCTRL>;
-    )
-    ZMK_MACRO(git_graph,
-      wait-ms = <20>;
-      tap-ms = <20>;
-      bindings = <&macro_press &kp LCTRL &kp LALT &kp LGUI &kp LSHFT>
-               , <&macro_tap &kp G>
-               , <&macro_release &kp LCTRL &kp LALT &kp LGUI &kp LSHFT>;
-    )
-    ZMK_MACRO(term,
-      wait-ms = <20>;
-      tap-ms = <20>;
-      bindings = <&macro_press &kp LCTRL>
-               , <&macro_tap &kp GRAVE>
-               , <&macro_release &kp LCTRL>;
-    )
-    ZMK_MACRO(prv_term,
-      wait-ms = <20>;
-      tap-ms = <20>;
-      bindings = <&macro_press &kp LCTRL>
-               , <&macro_tap &kp PG_UP>
-               , <&macro_release &kp LCTRL>;
-    )
-    ZMK_MACRO(nxt_term,
-      wait-ms = <20>;
-      tap-ms = <20>;
-      bindings = <&macro_press &kp LCTRL>
-               , <&macro_tap &kp PG_DN>
-               , <&macro_release &kp LCTRL>;
-    )
-    ZMK_MACRO(new_term,
-      wait-ms = <20>;
-      tap-ms = <20>;
-      bindings = <&macro_press &kp LCTRL &kp LSHFT>
-               , <&macro_tap &kp V>
-               , <&macro_release &kp LCTRL &kp LSHFT>;
-    )
-    ZMK_MACRO(folder_up,
-      wait-ms = <20>;
-      tap-ms = <20>;
-      bindings = <&macro_press &kp LCTRL &kp LALT &kp LGUI &kp LSHFT>
-               , <&macro_tap &kp U>
-               , <&macro_release &kp LCTRL &kp LALT &kp LGUI &kp LSHFT>;
-    )
+//     ZMK_MACRO(term,
+//       wait-ms = <20>;
+//       tap-ms = <20>;
+//       bindings = <&macro_press &kp LCTRL>
+//                , <&macro_tap &kp GRAVE>
+//                , <&macro_release &kp LCTRL>;
+//     )
     };
 };
 
@@ -237,10 +111,10 @@
       // ╰───────────────────────────┴─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┴───────────────────────────╯
       //                                           ├             ┼             ┼             ┤ ├    BKSP     ┼     DEL     ┼    ENTER    ┤
       //                                           ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
-          &none         &none         &none         &prv_virt_dsk &nxt_virt_dsk &none           &ctrl_alt_tab &none         &kp PG_UP     &kp PG_DN     &none         &none
-          &none         &kp LSHFT     &kp LALT      &kp LGUI      &kp LCTRL     &none           &kp HOME      &kp LEFT      &kp UP        &kp DOWN      &kp RIGHT     &kp END
-          &none         &none         &kp RALT      &prv_tab      &nxt_tab      &none           &kp SPACE     &gui_shf_lft  &snp_win_lft  &snp_win_rgt  &gui_shf_rgt  &kp K_APP
-                                                    &none         &none         &trans          &kp BSPC      &kp DEL       &kp RET
+          &none         &none         &none         &kp PRV_VD    &kp NXT_VD    &none           &kp CTL_ALT_TAB &none           &kp PG_UP       &kp PG_DN       &none           &none
+          &none         &kp LSHFT     &kp LALT      &kp LGUI      &kp LCTRL     &none           &kp HOME        &kp LEFT        &kp UP          &kp DOWN        &kp RIGHT       &kp END
+          &none         &none         &kp RALT      &kp PRV_TAB   &kp NXT_TAB   &none           &kp SPACE       &kp MOV_WIN_LFT &kp SNP_WIN_LFT &kp SNP_WIN_LFT &kp MOV_WIN_RGT &kp K_APP
+                                                    &none         &none         &trans          &kp BSPC        &kp DEL         &kp RET
       >;
     };
 
@@ -294,9 +168,9 @@
       // ╰───────────────────────────┴─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┴───────────────────────────╯
       //                                           ├             ┼             ┼             ┤ ├             ┼             ┼             ┤
       //                                           ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
-          &ctrl_alt_shft &none        &none         &win_e        &none         &none           &none         &none         &none         &none         &none         &none
-          &none          &none        &none         &none         &none         &ctrl_shft_x    &none         &kp C_PREV    &kp C_VOL_DN  &kp C_VOL_UP  &kp C_NEXT    &none
-          &none          &undo        &cut          &copy         &paste        &none           &none         &none         &none         &none         &none         &none
+          &kp LC(LA(LSFT)) &none      &none         &kp LG(E)     &none         &none           &none         &none         &none         &none         &none         &none
+          &none            &none      &none         &none         &none         &kp LC(LS(X))   &none         &kp C_PREV    &kp C_VOL_DN  &kp C_VOL_UP  &kp C_NEXT    &none
+          &none            &kp LC(Z)  &kp LC(X)     &kp LC(C)     &kp LC(V)     &none           &none         &none         &none         &none         &none         &none
                                                     &trans        &none         &none           &kp C_STOP    &kp C_PP      &kp C_MUTE
       >;
     };
@@ -313,8 +187,8 @@
       // ╰───────────────────────────┴─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┴───────────────────────────╯
       //                                           ├             ┼             ┼             ┤ ├             ┼             ┼             ┤
       //                                           ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
-          &reset        &none         &none         &none         &none         &none           &none         &folder_up    &none         &none         &none         &reset
-          &bt BT_CLR    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &git_graph    &term         &prv_term     &nxt_term     &new_term     &none
+          &reset        &none         &none         &none         &none         &none           &none         &kp FOLDER_UP &none         &none         &none         &reset
+          &bt BT_CLR    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &kp GIT_GRAPH &kp TERM      &kp PRV_TERM  &kp NXT_TERM  &kp NEW_TERM  &none
           &bootloader   &none         &none         &none         &none         &none           &none         &none         &none         &none         &none         &bootloader
                                                     &none         &none         &none           &none         &none         &trans
       >;
