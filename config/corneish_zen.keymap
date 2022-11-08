@@ -113,7 +113,7 @@
       //                                           ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
           &none         &none         &none         &kp PRV_VD    &kp NXT_VD    &none           &kp CTL_ALT_TAB &none           &kp PG_UP       &kp PG_DN       &none           &none
           &none         &kp LSHFT     &kp LALT      &kp LGUI      &kp LCTRL     &none           &kp HOME        &kp LEFT        &kp UP          &kp DOWN        &kp RIGHT       &kp END
-          &none         &none         &kp RALT      &kp PRV_TAB   &kp NXT_TAB   &none           &kp SPACE       &kp MOV_WIN_LFT &kp SNP_WIN_LFT &kp SNP_WIN_LFT &kp MOV_WIN_RGT &kp K_APP
+          &none         &none         &kp RALT      &kp PRV_TAB   &kp NXT_TAB   &none           &kp SPACE       &kp MOV_WIN_LFT &kp SNP_WIN_LFT &kp SNP_WIN_RGT &kp MOV_WIN_RGT &kp K_APP
                                                     &none         &none         &trans          &kp BSPC        &kp DEL         &kp RET
       >;
     };
@@ -132,7 +132,7 @@
       //                                           ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
           &none         &none         &none         &kp PRV_VD    &kp NXT_VD    &none           &kp CTL_ALT_TAB &none           &kp PG_UP       &kp PG_DN       &none           &none
           &none         &kp LSHFT     &kp LALT      &kp LGUI      &kp LCTRL     &none           &kp HOME        &kp LEFT        &kp UP          &kp DOWN        &kp RIGHT       &kp END
-          &none         &none         &kp RALT      &kp PRV_TAB   &kp NXT_TAB   &none           &kp SPACE       &kp MOV_WIN_LFT &kp SNP_WIN_LFT &kp SNP_WIN_LFT &kp MOV_WIN_RGT &kp K_APP
+          &none         &none         &kp RALT      &kp PRV_TAB   &kp NXT_TAB   &none           &kp SPACE       &kp MOV_WIN_LFT &kp SNP_WIN_LFT &kp SNP_WIN_RGT &kp MOV_WIN_RGT &kp K_APP
                                                     &none         &none         &trans          &kp BSPC        &kp DEL         &kp RET
       >;
     };
