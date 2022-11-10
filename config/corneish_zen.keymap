@@ -9,13 +9,11 @@
   };
 };
 
-// Configure mod-tap
-&mt {
-  flavor = "balanced";
-  tapping-term-ms = <150>;
-  quick-tap-ms = <100>;
-  global-quick-tap;
-};
+// User-friendly definitions for key positions
+#include "../keypos_def/keypos_42keys.h"
+#define KEYS_L LT0 LT1 LT2 LT3 LT4 LT5 LM0 LM1 LM2 LM3 LM4 LM5 LB0 LB1 LB2 LB3 LB4 LB5 // left-hand keys
+#define KEYS_R RT0 RT1 RT2 RT3 RT4 RT5 RM0 RM1 RM2 RM3 RM4 RM5 RB0 RB1 RB2 RB3 RB4 RB5 // right-hand keys
+#define THUMBS LH2 LH1 LH0 RH0 RH1 RH2                                                 // thumb keys
 
 // Desktop and tab navigation shortcuts
 #define PRV_VD      LC(LG(LEFT))
@@ -35,6 +33,40 @@
 #define NEW_TERM  LC(LS(GRAVE))
 #define PRV_TERM  LC(PG_UP)
 #define NXT_TERM  LC(PG_DN)
+
+// Configuration for home-row mods
+#define QUICK_TAP_MS 100
+#define GLOBAL_QUICK_TAP_MS 100
+#define TAP_TERM_MS 150
+/ {
+  behaviors {
+    hml: hml {
+      label = "ZB_hml";
+      compatible = "zmk,behavior-hold-tap";
+      #binding-cells = <2>;
+      flavor = "balanced";
+      bindings = <&kp>, <&kp>;
+      tapping-term-ms = <TAP_TERM_MS>;
+      quick-tap-ms = <QUICK_TAP_MS>;
+      global-quick-tap-ms = <GLOBAL_QUICK_TAP_MS>; // requires PR #1387, currently obtained by using urob's fork of zmk
+      hold-trigger-on-release;                     // requires PR #1423, currently obtained by using urob's fork of zmk
+      hold-trigger-key-positions = <KEYS_R THUMBS>;
+    };
+
+    hmr: hmr {
+      label = "ZB_hmr";
+      compatible = "zmk,behavior-hold-tap";
+      #binding-cells = <2>;
+      flavor = "balanced";
+      bindings = <&kp>, <&kp>;
+      tapping-term-ms = <TAP_TERM_MS>;
+      quick-tap-ms = <QUICK_TAP_MS>;
+      global-quick-tap-ms = <GLOBAL_QUICK_TAP_MS>; // requires PR #1387, currently obtained by using urob's fork of zmk
+      hold-trigger-on-release;                     // requires PR #1423, currently obtained by using urob's fork of zmk
+      hold-trigger-key-positions = <KEYS_L THUMBS>;
+    };
+  };
+};
 
 / {
   macros {
@@ -74,8 +106,8 @@
       //                                           ├  ESC / LT5  ┼  TAB / LT3  ┼  SPC / LT2  ┤ ├  BKSP / LT1 ┼  DEL / LT4  ┼   Layer 6   ┤
       //                                           ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
           &kp BSLH      &kp SQT       &kp COMMA     &kp DOT       &kp P         &kp Y           &kp F         &kp G         &kp C         &kp R         &kp L         &kp FSLH
-          &kp LEFT      &mt LSHFT A   &mt LALT O    &mt LGUI E    &mt LCTRL U   &kp I           &kp D         &mt LCTRL H   &mt LGUI T    &mt LALT N    &mt LSHFT S   &kp RET
-          &kp GRAVE     &kp SEMI      &mt RALT Q    &kp J         &kp K         &kp X           &kp B         &kp M         &kp W         &mt RALT V    &kp Z         &kp MINUS
+          &kp LEFT      &hml LSHFT A  &hml LALT O   &hml LGUI E   &hml LCTRL U  &kp I           &kp D         &hmr LCTRL H  &hmr LGUI T   &hmr LALT N   &hmr LSHFT S  &kp RET
+          &kp GRAVE     &kp SEMI      &hml RALT Q   &kp J         &kp K         &kp X           &kp B         &kp M         &kp W         &hmr RALT V   &kp Z         &kp MINUS
                                                     &lt 5 ESC     &lt 3 TAB     &lt 2 SPACE     &lt 1 BSPC    &lt 4 DEL     &mo 6
       >;
     };
@@ -92,10 +124,10 @@
       // ╰───────────────────────────┴─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┴───────────────────────────╯
       //                                           ├     ESC     ┼     TAB     ┼    SPACE    ┤ ├             ┼             ┼             ┤
       //                                           ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
-          &kp BSLH      &kp EXCL      &kp AT        &kp HASH      &kp DOLLAR    &kp PERCENT     &kp CARET     &kp AMPS      &kp ASTRK     &kp LPAR      &kp RPAR      &kp FSLH
-          &kp LEFT      &mt LSHFT N1  &mt LALT N2   &mt LGUI N3   &mt LCTRL N4  &kp N5          &kp N6        &mt LCTRL N7  &mt LGUI N8   &mt LALT N9   &mt LSHFT N0  &kp RET
-          &kp GRAVE     &kp LBKT      &mt RALT RBKT &kp LPAR      &kp RPAR      &kp DOT         &none         &kp PLUS      &kp EQUAL     &mt RALT LBRC &kp RBRC      &kp MINUS
-                                                    &kp ESC       &kp TAB       &kp SPACE       &trans        &none         &none
+          &kp BSLH      &kp EXCL      &kp AT          &kp HASH     &kp DOLLAR    &kp PERCENT     &kp CARET     &kp AMPS      &kp ASTRK     &kp LPAR       &kp RPAR      &kp FSLH
+          &kp LEFT      &hml LSHFT N1 &hml LALT N2    &hml LGUI N3 &hml LCTRL N4 &kp N5          &kp N6        &hmr LCTRL N7 &hmr LGUI N8  &hmr LALT N9   &hmr LSHFT N0 &kp RET
+          &kp GRAVE     &kp LBKT      &hml RALT RBKT  &kp LPAR     &kp RPAR      &kp DOT         &none         &kp PLUS      &kp EQUAL     &hmr RALT LBRC &kp RBRC      &kp MINUS
+                                                      &kp ESC      &kp TAB       &kp SPACE       &trans        &none         &none
       >;
     };
 
