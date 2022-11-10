@@ -44,7 +44,7 @@
       label = "ZB_hml";
       compatible = "zmk,behavior-hold-tap";
       #binding-cells = <2>;
-      flavor = "balanced";
+      flavor = "tap-preferred";
       bindings = <&kp>, <&kp>;
       tapping-term-ms = <TAP_TERM_MS>;
       quick-tap-ms = <QUICK_TAP_MS>;
@@ -57,7 +57,7 @@
       label = "ZB_hmr";
       compatible = "zmk,behavior-hold-tap";
       #binding-cells = <2>;
-      flavor = "balanced";
+      flavor = "tap-preferred";
       bindings = <&kp>, <&kp>;
       tapping-term-ms = <TAP_TERM_MS>;
       quick-tap-ms = <QUICK_TAP_MS>;
