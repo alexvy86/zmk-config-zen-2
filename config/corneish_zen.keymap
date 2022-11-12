@@ -37,7 +37,7 @@
 // Configuration for home-row mods
 #define QUICK_TAP_MS 100
 #define GLOBAL_QUICK_TAP_MS 100
-#define TAP_TERM_MS 150
+#define TAP_TERM_MS 200
 / {
   behaviors {
     hml: hml {
