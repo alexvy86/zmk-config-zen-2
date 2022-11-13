@@ -108,15 +108,15 @@
       // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
       // ├      \      ┼      '      ┼      ,      ┼      .      ┼      P      ┼      Y      ┤ ├      F      ┼      G      ┼      C      ┼      R      ┼      L      ┼      /      ┤
       // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-      // ├     LFT     ┼  LSHFT / A  ┼  LALT / O   ┼  LGUI / E   ┼  LCTRL / U  ┼      I      ┤ ├      D      ┼  LCTRL / H  ┼  LGUI / T   ┼  LALT / N   ┼  LSHFT / S  ┼    ENTER    ┤
+      // ├     LFT     ┼  LSHFT / A  ┼  LALT / O   ┼  LGUI / E   ┼  LCTRL / U  ┼      I      ┤ ├      D      ┼  LCTRL / H  ┼  LGUI / T   ┼  LALT / N   ┼  LSHFT / S  ┼      -      ┤
       // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-      // ├      `      ┼      ;      ┼  RALT / Q   ┼      J      ┼      K      ┼      X      ┤ ├      B      ┼      M      ┼      W      ┼  RALT / V   ┼      Z      ┼      -      ┤
+      // ├      `      ┼      ;      ┼  RALT / Q   ┼      J      ┼      K      ┼      X      ┤ ├      B      ┼      M      ┼      W      ┼  RALT / V   ┼      Z      ┼    ENTER    ┤
       // ╰───────────────────────────┴─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┴───────────────────────────╯
       //                                           ├     ESC     ┼  TAB / LT3  ┼  SPC / LT2  ┤ ├  BKSP / LT1 ┼  DEL / LT4  ┼             ┤
       //                                           ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
           &kp BSLH      &kp SQT       &kp COMMA     &kp DOT       &kp P         &kp Y           &kp F         &kp G         &kp C         &kp R         &kp L         &kp FSLH
-          &kp LEFT      &hml LSHFT A  &hml LALT O   &hml LGUI E   &hml LCTRL U  &kp I           &kp D         &hmr LCTRL H  &hmr LGUI T   &hmr LALT N   &hmr LSHFT S  &kp RET
-          &kp GRAVE     &kp SEMI      &hml RALT Q   &kp J         &kp K         &kp X           &kp B         &kp M         &kp W         &hmr RALT V   &kp Z         &kp MINUS
+          &kp LEFT      &hml LSHFT A  &hml LALT O   &hml LGUI E   &hml LCTRL U  &kp I           &kp D         &hmr LCTRL H  &hmr LGUI T   &hmr LALT N   &hmr LSHFT S  &kp MINUS
+          &kp GRAVE     &kp SEMI      &hml RALT Q   &kp J         &kp K         &kp X           &kp B         &kp M         &kp W         &hmr RALT V   &kp Z         &kp RET
                                                     &kp ESC       &lt 3 TAB     &lt 2 SPACE     &lt 1 BSPC    &lt 4 DEL     &none
       >;
     };
@@ -127,15 +127,15 @@
       // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
       // ├      \      ┼      !      ┼      @      ┼      #      ┼      $      ┼      %      ┤ ├      ^      ┼      &      ┼      *      ┼      (      ┼      )      ┼      /      ┤
       // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-      // ├     LFT     ┼  LSHFT / 1  ┼  LALT / 2   ┼  LGUI / 3   ┼  LCTRL / 4  ┼      5      ┤ ├      6      ┼  LCTRL / 7  ┼  LGUI / 8   ┼  LALT / 9   ┼  LSHIFT / 0 ┼    ENTER    ┤
+      // ├     LFT     ┼  LSHFT / 1  ┼  LALT / 2   ┼  LGUI / 3   ┼  LCTRL / 4  ┼      5      ┤ ├      6      ┼  LCTRL / 7  ┼  LGUI / 8   ┼  LALT / 9   ┼  LSHIFT / 0 ┼      -      ┤
       // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-      // ├      `      ┼      [      ┼  RALT / ]   ┼      (      ┼      )      ┼      .      ┤ ├             ┼      +      ┼      =      ┼  RALT / {   ┼      }      ┼      -      ┤
+      // ├      `      ┼      [      ┼  RALT / ]   ┼      (      ┼      )      ┼      .      ┤ ├             ┼      +      ┼      =      ┼  RALT / {   ┼      }      ┼    ENTER    ┤
       // ╰───────────────────────────┴─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┴───────────────────────────╯
       //                                           ├     ESC     ┼     TAB     ┼    SPACE    ┤ ├             ┼             ┼             ┤
       //                                           ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
           &kp BSLH      &kp EXCL      &kp AT          &kp HASH     &kp DOLLAR    &kp PERCENT     &kp CARET     &kp AMPS      &kp ASTRK     &kp LPAR       &kp RPAR      &kp FSLH
-          &kp LEFT      &hml LSHFT N1 &hml LALT N2    &hml LGUI N3 &hml LCTRL N4 &kp N5          &kp N6        &hmr LCTRL N7 &hmr LGUI N8  &hmr LALT N9   &hmr LSHFT N0 &kp RET
-          &kp GRAVE     &kp LBKT      &hml RALT RBKT  &kp LPAR     &kp RPAR      &kp DOT         &none         &kp PLUS      &kp EQUAL     &hmr RALT LBRC &kp RBRC      &kp MINUS
+          &kp LEFT      &hml LSHFT N1 &hml LALT N2    &hml LGUI N3 &hml LCTRL N4 &kp N5          &kp N6        &hmr LCTRL N7 &hmr LGUI N8  &hmr LALT N9   &hmr LSHFT N0 &kp MINUS
+          &kp GRAVE     &kp LBKT      &hml RALT RBKT  &kp LPAR     &kp RPAR      &kp DOT         &none         &kp PLUS      &kp EQUAL     &hmr RALT LBRC &kp RBRC      &kp RET
                                                       &kp ESC      &kp TAB       &kp SPACE       &trans        &none         &none
       >;
     };
