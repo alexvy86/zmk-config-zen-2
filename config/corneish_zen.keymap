@@ -35,6 +35,12 @@
 #define PRV_TERM  LC(PG_UP)
 #define NXT_TERM  LC(PG_DN)
 
+// Configuration for sticky-key behavior
+&sk {
+  release-after-ms = <500>;
+  quick-release;
+};
+
 // Configuration for home-row mods
 #define QUICK_TAP_MS 100
 #define GLOBAL_QUICK_TAP_MS 100
@@ -74,6 +80,15 @@
       tapping-term-ms = <200>;
       bindings = <&reset>, <&bootloader>;
     };
+
+    // tap: sticky shift | double tap: capsword | triple tap: cancel capsword
+    td_shft: td_shft {
+      compatible = "zmk,behavior-tap-dance";
+      label = "TD_SHFT";
+      #binding-cells = <0>;
+      tapping-term-ms = <200>;
+      bindings = <&sk LSHFT>, <&caps_word>, <&kp K_CANCEL>;
+    };
   };
 };
 
@@ -110,13 +125,13 @@
       // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
       // ├      `      ┼  LSHFT / A  ┼  LALT / O   ┼  LGUI / E   ┼  LCTRL / U  ┼      I      ┤ ├      D      ┼  LCTRL / H  ┼  LGUI / T   ┼  LALT / N   ┼  LSHFT / S  ┼      -      ┤
       // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-      // ├             ┼      ;      ┼  RALT / Q   ┼      J      ┼      K      ┼      X      ┤ ├      B      ┼      M      ┼      W      ┼  RALT / V   ┼      Z      ┼    ENTER    ┤
+      // ├ Custom Shft ┼      ;      ┼  RALT / Q   ┼      J      ┼      K      ┼      X      ┤ ├      B      ┼      M      ┼      W      ┼  RALT / V   ┼      Z      ┼    ENTER    ┤
       // ╰───────────────────────────┴─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┴───────────────────────────╯
       //                                           ├     ESC     ┼  TAB / LT3  ┼  SPC / LT2  ┤ ├  BKSP / LT1 ┼  DEL / LT4  ┼             ┤
       //                                           ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
           &kp BSLH      &kp SQT       &kp COMMA     &kp DOT       &kp P         &kp Y           &kp F         &kp G         &kp C         &kp R         &kp L         &kp FSLH
           &kp GRAVE     &hml LSHFT A  &hml LALT O   &hml LGUI E   &hml LCTRL U  &kp I           &kp D         &hmr LCTRL H  &hmr LGUI T   &hmr LALT N   &hmr LSHFT S  &kp MINUS
-          &none         &kp SEMI      &hml RALT Q   &kp J         &kp K         &kp X           &kp B         &kp M         &kp W         &hmr RALT V   &kp Z         &kp RET
+          &td_shft      &kp SEMI      &hml RALT Q   &kp J         &kp K         &kp X           &kp B         &kp M         &kp W         &hmr RALT V   &kp Z         &kp RET
                                                     &kp ESC       &lt 3 TAB     &lt 2 SPACE     &lt 1 BSPC    &lt 4 DEL     &none
       >;
     };
