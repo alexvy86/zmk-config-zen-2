@@ -116,7 +116,7 @@
       //                                           ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
           &kp BSLH      &kp SQT       &kp COMMA     &kp DOT       &kp P         &kp Y           &kp F         &kp G         &kp C         &kp R         &kp L         &kp FSLH
           &kp GRAVE     &hml LSHFT A  &hml LALT O   &hml LGUI E   &hml LCTRL U  &kp I           &kp D         &hmr LCTRL H  &hmr LGUI T   &hmr LALT N   &hmr LSHFT S  &kp MINUS
-          &kp GRAVE     &kp SEMI      &hml RALT Q   &kp J         &kp K         &kp X           &kp B         &kp M         &kp W         &hmr RALT V   &kp Z         &kp RET
+          &none         &kp SEMI      &hml RALT Q   &kp J         &kp K         &kp X           &kp B         &kp M         &kp W         &hmr RALT V   &kp Z         &kp RET
                                                     &kp ESC       &lt 3 TAB     &lt 2 SPACE     &lt 1 BSPC    &lt 4 DEL     &none
       >;
     };
@@ -135,7 +135,7 @@
       //                                           ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
           &kp BSLH      &kp EXCL      &kp AT          &kp HASH     &kp DOLLAR    &kp PERCENT     &kp CARET     &kp AMPS      &kp ASTRK     &kp LPAR       &kp RPAR      &kp FSLH
           &kp GRAVE     &hml LSHFT N1 &hml LALT N2    &hml LGUI N3 &hml LCTRL N4 &kp N5          &kp N6        &hmr LCTRL N7 &hmr LGUI N8  &hmr LALT N9   &hmr LSHFT N0 &kp MINUS
-          &kp GRAVE     &kp LBKT      &hml RALT RBKT  &kp LPAR     &kp RPAR      &kp DOT         &none         &kp PLUS      &kp EQUAL     &hmr RALT LBRC &kp RBRC      &kp RET
+          &none         &kp LBKT      &hml RALT RBKT  &kp LPAR     &kp RPAR      &kp DOT         &none         &kp PLUS      &kp EQUAL     &hmr RALT LBRC &kp RBRC      &kp RET
                                                       &kp ESC      &kp TAB       &kp SPACE       &trans        &none         &none
       >;
     };
