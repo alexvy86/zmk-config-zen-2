@@ -47,6 +47,7 @@
 #define TAP_TERM_MS 200
 / {
   behaviors {
+    // Non-shift homerow mod for left hand
     hml: hml {
       label = "ZB_hml";
       compatible = "zmk,behavior-hold-tap";
@@ -60,6 +61,20 @@
       hold-trigger-key-positions = <KEYS_R THUMBS>;
     };
 
+    // Shift homerow mod for left hand
+    hmsl: hmsl {
+      label = "ZB_hmsl";
+      compatible = "zmk,behavior-hold-tap";
+      #binding-cells = <2>;
+      flavor = "tap-preferred";
+      bindings = <&kp>, <&kp>;
+      tapping-term-ms = <TAP_TERM_MS>;
+      quick-tap-ms = <QUICK_TAP_MS>;
+      hold-trigger-on-release;                     // requires PR #1423, currently obtained by using urob's fork of zmk
+      hold-trigger-key-positions = <KEYS_R THUMBS>;
+    };
+
+    // Non-shift homerow mod for right hand
     hmr: hmr {
       label = "ZB_hmr";
       compatible = "zmk,behavior-hold-tap";
@@ -69,6 +84,19 @@
       tapping-term-ms = <TAP_TERM_MS>;
       quick-tap-ms = <QUICK_TAP_MS>;
       global-quick-tap-ms = <GLOBAL_QUICK_TAP_MS>; // requires PR #1387, currently obtained by using urob's fork of zmk
+      hold-trigger-on-release;                     // requires PR #1423, currently obtained by using urob's fork of zmk
+      hold-trigger-key-positions = <KEYS_L THUMBS>;
+    };
+
+    // Shift homerow mod for right hand
+    hmsr: hmsr {
+      label = "ZB_hmsr";
+      compatible = "zmk,behavior-hold-tap";
+      #binding-cells = <2>;
+      flavor = "tap-preferred";
+      bindings = <&kp>, <&kp>;
+      tapping-term-ms = <TAP_TERM_MS>;
+      quick-tap-ms = <QUICK_TAP_MS>;
       hold-trigger-on-release;                     // requires PR #1423, currently obtained by using urob's fork of zmk
       hold-trigger-key-positions = <KEYS_L THUMBS>;
     };
@@ -149,7 +177,7 @@
       //                                           ├     ESC     ┼  TAB / LT3  ┼  SPC / LT2  ┤ ├  BKSP / LT1 ┼  DEL / LT4  ┼             ┤
       //                                           ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
           &kp BSLH      &kp SQT       &kp COMMA     &kp DOT       &kp P         &kp Y           &kp F         &kp G         &kp C         &kp R         &kp L         &kp FSLH
-          &kp GRAVE     &hml LSHFT A  &hml LALT O   &hml LGUI E   &hml LCTRL U  &kp I           &kp D         &hmr LCTRL H  &hmr LGUI T   &hmr LALT N   &hmr LSHFT S  &kp MINUS
+          &kp GRAVE     &hmsl LSHFT A &hml LALT O   &hml LGUI E   &hml LCTRL U  &kp I           &kp D         &hmr LCTRL H  &hmr LGUI T   &hmr LALT N   &hmsr LSHFT S &kp MINUS
           &td_shft      &kp SEMI      &hml RALT Q   &kp J         &kp K         &kp X           &kp B         &kp M         &kp W         &hmr RALT V   &kp Z         &kp RET
                                                     &kp ESC       &lt 3 TAB     &lt 2 SPACE     &lt 1 BSPC    &lt 4 DEL     &td_layers
       >;
@@ -167,9 +195,9 @@
       // ╰───────────────────────────┴─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┴───────────────────────────╯
       //                                           ├     ESC     ┼     TAB     ┼    SPACE    ┤ ├ // HELD //  ┼             ┼             ┤
       //                                           ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
-          &kp BSLH      &kp EXCL      &kp AT          &kp HASH     &kp DOLLAR    &kp PERCENT     &kp CARET     &kp AMPS      &kp ASTRK     &kp LPAR       &kp RPAR      &kp FSLH
-          &kp GRAVE     &hml LSHFT N1 &hml LALT N2    &hml LGUI N3 &hml LCTRL N4 &kp N5          &kp N6        &hmr LCTRL N7 &hmr LGUI N8  &hmr LALT N9   &hmr LSHFT N0 &kp MINUS
-          &none         &kp LBKT      &hml RALT RBKT  &kp LPAR     &kp RPAR      &kp DOT         &none         &kp PLUS      &kp EQUAL     &hmr RALT LBRC &kp RBRC      &kp RET
+          &kp BSLH      &kp EXCL       &kp AT         &kp HASH     &kp DOLLAR    &kp PERCENT     &kp CARET     &kp AMPS      &kp ASTRK     &kp LPAR       &kp RPAR       &kp FSLH
+          &kp GRAVE     &hmsl LSHFT N1 &hml LALT N2   &hml LGUI N3 &hml LCTRL N4 &kp N5          &kp N6        &hmr LCTRL N7 &hmr LGUI N8  &hmr LALT N9   &hmsr LSHFT N0 &kp MINUS
+          &none         &kp LBKT       &hml RALT RBKT &kp LPAR     &kp RPAR      &kp DOT         &none         &kp PLUS      &kp EQUAL     &hmr RALT LBRC &kp RBRC       &kp RET
                                                       &kp ESC      &kp TAB       &kp SPACE       &trans        &none         &none
       >;
     };
