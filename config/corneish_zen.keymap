@@ -90,6 +90,14 @@
       bindings = <&sk LSHFT>, <&caps_word>, <&kp K_CANCEL>;
     };
 
+    td_layers: td_layers {
+      compatible = "zmk,behavior-tap-dance";
+      label = "TD_LAYERS";
+      #binding-cells = <0>;
+      tapping-term-ms = <200>;
+      bindings = <&to 0>, <&to 5>;
+    };
+
     lt2: lt2 {
       label = "ZB_hml";
       compatible = "zmk,behavior-hold-tap";
