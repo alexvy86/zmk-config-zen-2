@@ -99,15 +99,14 @@
     };
 
     lt2: lt2 {
-      label = "ZB_hml";
+      label = "ZB_lt2";
       compatible = "zmk,behavior-hold-tap";
       #binding-cells = <2>;
-      flavor = "hold-preferred";
-      bindings = <&kp>, <&kp>;
+      flavor = "balanced";
+      bindings = <&lt>, <&kp>;
       tapping-term-ms = <TAP_TERM_MS>;
       quick-tap-ms = <QUICK_TAP_MS>;
       global-quick-tap-ms = <GLOBAL_QUICK_TAP_MS>; // requires PR #1387, currently obtained by using urob's fork of zmk
-      hold-trigger-on-release;                     // requires PR #1423, currently obtained by using urob's fork of zmk
     };
   };
 };
