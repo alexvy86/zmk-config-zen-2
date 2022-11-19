@@ -90,12 +90,16 @@
       bindings = <&sk LSHFT>, <&caps_word>, <&kp K_CANCEL>;
     };
 
-    td_layers: td_layers {
-      compatible = "zmk,behavior-tap-dance";
-      label = "TD_LAYERS";
-      #binding-cells = <0>;
-      tapping-term-ms = <200>;
-      bindings = <&to 0>, <&to 5>;
+    lt2: lt2 {
+      label = "ZB_hml";
+      compatible = "zmk,behavior-hold-tap";
+      #binding-cells = <2>;
+      flavor = "hold-preferred";
+      bindings = <&kp>, <&kp>;
+      tapping-term-ms = <TAP_TERM_MS>;
+      quick-tap-ms = <QUICK_TAP_MS>;
+      global-quick-tap-ms = <GLOBAL_QUICK_TAP_MS>; // requires PR #1387, currently obtained by using urob's fork of zmk
+      hold-trigger-on-release;                     // requires PR #1423, currently obtained by using urob's fork of zmk
     };
   };
 };
@@ -253,7 +257,7 @@
           &kp BSLH      &kp SQT       &kp COMMA     &kp DOT       &kp P         &kp Y           &kp F         &kp G         &kp C         &kp R         &kp L         &kp FSLH
           &kp GRAVE     &kp A         &kp O         &kp E         &kp U         &kp I           &kp D         &kp H         &kp T         &kp N         &kp S         &kp MINUS
           &td_shft      &kp SEMI      &kp Q         &kp J         &kp K         &kp X           &kp B         &kp M         &kp W         &kp V         &kp Z         &kp RET
-                                                    &kp ESC       &lt 8 TAB     &lt 7 SPACE     &lt 6 BSPC    &lt 9 DEL     &td_layers
+                                                    &kp ESC       &lt 8 TAB     &lt2 7 SPACE    &lt 6 BSPC    &lt 9 DEL     &td_layers
       >;
     };
 
