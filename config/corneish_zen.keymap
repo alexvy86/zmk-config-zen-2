@@ -250,12 +250,12 @@
       // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
       // ├ Clr BT prof ┼ BT prof 1   ┼ BT prof 2   ┼ BT prof 3   ┼ BT prof 4   ┼ BT prof 5   ┤ ├ Play/Pause  ┼ Media Prev  ┼  Vol Down   ┼   Vol Up    ┼ Media Next  ┼    Mute     ┤
       // ╰───────────────────────────┴─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┴───────────────────────────╯
-      //                                           ├ Rst/Bootldr ┼             ┼             ┤ ├             ┼ // HELD //  ┼ Rst/Bootldr ┤
+      //                                           ├ Rst/Bootldr ┼ Out Toggle  ┼             ┤ ├             ┼ // HELD //  ┼ Rst/Bootldr ┤
       //                                           ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
           &none         &none         &none         &none         &none         &none           &none         &kp FOLDER_UP &kp LG(E)     &none         &none         &none
           &none         &kp LC(Z)     &kp LC(X)     &kp LC(C)     &kp LC(V)     &kp LC(LS(X))   &kp GIT_GRAPH &kp TERM      &kp PRV_TERM  &kp NXT_TERM  &kp NEW_TERM  &none
           &bt BT_CLR    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &kp C_PP      &kp C_PREV    &kp C_VOL_DN  &kp C_VOL_UP  &kp C_NEXT    &kp C_MUTE
-                                                    &rst_boot     &none         &none           &none         &trans        &rst_boot
+                                                    &rst_boot     &out OUT_TOG  &none           &none         &trans        &rst_boot
       >;
     };
 
@@ -363,12 +363,12 @@
       // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
       // ├ Clr BT prof ┼ BT prof 1   ┼ BT prof 2   ┼ BT prof 3   ┼ BT prof 4   ┼ BT prof 5   ┤ ├ Play/Pause  ┼ Media Prev  ┼  Vol Down   ┼   Vol Up    ┼ Media Next  ┼    Mute     ┤
       // ╰───────────────────────────┴─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┴───────────────────────────╯
-      //                                           ├ Rst/Bootldr ┼             ┼             ┤ ├             ┼ // HELD //  ┼ Rst/Bootldr ┤
+      //                                           ├ Rst/Bootldr ┼ Out Toggle  ┼             ┤ ├             ┼ // HELD //  ┼ Rst/Bootldr ┤
       //                                           ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
           &none         &none         &none         &none         &none         &none           &none         &kp FOLDER_UP &kp LG(E)     &none         &none         &none
           &none         &kp LC(Z)     &kp LC(X)     &kp LC(C)     &kp LC(V)     &kp LC(LS(X))   &kp GIT_GRAPH &kp TERM      &kp PRV_TERM  &kp NXT_TERM  &kp NEW_TERM  &none
           &bt BT_CLR    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &kp C_PP      &kp C_PREV    &kp C_VOL_DN  &kp C_VOL_UP  &kp C_NEXT    &kp C_MUTE
-                                                    &rst_boot     &none         &none           &none         &trans        &rst_boot
+                                                    &rst_boot     &out OUT_TOG  &none           &none         &trans        &rst_boot
       >;
     };
 
