@@ -140,6 +140,25 @@
   };
 };
 
+#if !defined OS_UNICODE_LEAD
+    #if HOST_OS == 2
+        #define OS_UNICODE_LEAD &macro_press &kp LALT      // macOS/Windows-Alt-Codes
+    #elif HOST_OS == 1
+        #define OS_UNICODE_LEAD &macro_tap &kp LS(LC(U))   // Linux
+    #else
+        #define OS_UNICODE_LEAD &macro_tap &kp RALT &kp U  // Windows + WinCompose (default)
+    #endif
+#endif
+#if !defined OS_UNICODE_TRAIL
+    #if HOST_OS == 2
+        #define OS_UNICODE_TRAIL &macro_release &kp LALT  // macOS/Windows-Alt-Codes
+    #elif HOST_OS == 1
+        #define OS_UNICODE_TRAIL &macro_tap &kp SPACE     // Linux
+    #else
+        #define OS_UNICODE_TRAIL &macro_tap &kp RET       // Windows + WinCompose (default)
+    #endif
+#endif
+
 / {
   macros {
 //     ZMK_MACRO(term,
@@ -149,8 +168,29 @@
 //                , <&macro_tap &kp GRAVE>
 //                , <&macro_release &kp LCTRL>;
 //     )
+    ZMK_MACRO(shrug,
+      wait-ms = <20>;
+      tap-ms = <20>;
+      bindings = <OS_UNICODE_LEAD>
+              ,  <&macro_tap &kp N2 &kp N0 &kp N3 &kp E>
+              ,  <OS_UNICODE_TRAIL>
+              ,  <&macro_tap &kp BACKSLASH>
+              ,  <&macro_tap &kp UNDERSCORE>
+              ,  <&macro_tap &kp LEFT_PARENTHESIS>
+              ,  <OS_UNICODE_LEAD>
+              ,  <&macro_tap &kp N3 &kp N0 &kp C &kp N4>
+              ,  <OS_UNICODE_TRAIL>
+              ,  <&macro_tap &kp RIGHT_PARENTHESIS>
+              ,  <&macro_tap &kp UNDERSCORE>
+              ,  <&macro_tap &kp SLASH>
+              ,  <OS_UNICODE_LEAD>
+              ,  <&macro_tap &kp N2 &kp N0 &kp N3 &kp E>
+              ,  <OS_UNICODE_TRAIL>;
+    )
     };
 };
+
+// ¯\_(ツ)_/¯
 
 / {
   keymap {
@@ -207,7 +247,7 @@
       label = "NAV";
       bindings = <
       // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-      // ├             ┼ WIN PRV MON ┼ SNP WIN LFT ┼ SNP WIN RGT ┼ WIN NXT MON ┼             ┤ ├             ┼             ┼   PAGE UP   ┼  PAGE DOWN  ┼             ┼             ┤
+      // ├             ┼ WIN PRV MON ┼ SNP WIN LFT ┼ SNP WIN RGT ┼ WIN NXT MON ┼             ┤ ├ Shrug Emoji ┼             ┼   PAGE UP   ┼  PAGE DOWN  ┼             ┼             ┤
       // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
       // ├             ┼    LSHFT    ┼     LALT    ┼     LGUI    ┼    LCTRL    ┼ CONTEXT MENU┤ ├     HOME    ┼    LEFT     ┼     UP      ┼     DOWN    ┼    RIGHT    ┼     END     ┤
       // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
@@ -215,7 +255,7 @@
       // ╰───────────────────────────┴─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┴───────────────────────────╯
       //                                           ├             ┼             ┼ // HELD //  ┤ ├    BKSP     ┼     DEL     ┼             ┤
       //                                           ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
-          &none         &kp GS_LFT    &kp G_LFT     &kp G_RGT     &kp GS_RGT    &none           &none         &none         &kp PG_UP      &kp PG_DN    &none         &none
+          &none         &kp GS_LFT    &kp G_LFT     &kp G_RGT     &kp GS_RGT    &none           &shrug        &none         &kp PG_UP      &kp PG_DN    &none         &none
           &none         &kp LSHFT     &kp LALT      &kp LGUI      &kp LCTRL     &kp K_APP       &kp HOME      &kp LEFT      &kp UP         &kp DOWN     &kp RIGHT     &kp END
           &none         &kp PRV_VD    &kp NXT_VD    &kp PRV_TAB   &kp NXT_TAB   &kp CA_TAB      &kp SPACE     &none         &none          &none        &none         &none
                                                     &none         &none         &trans          &kp BSPC      &kp DEL       &none
