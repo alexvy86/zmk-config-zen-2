@@ -146,7 +146,7 @@
     #elif HOST_OS == 1
         #define OS_UNICODE_LEAD &macro_tap &kp LS(LC(U))   // Linux
     #else
-        #define OS_UNICODE_LEAD &macro_tap &kp RALT &kp U  // Windows + WinCompose (default)
+        #define OS_UNICODE_LEAD &macro_press &kp LALT      // Windows
     #endif
 #endif
 #if !defined OS_UNICODE_TRAIL
@@ -155,7 +155,7 @@
     #elif HOST_OS == 1
         #define OS_UNICODE_TRAIL &macro_tap &kp SPACE     // Linux
     #else
-        #define OS_UNICODE_TRAIL &macro_tap &kp RET       // Windows + WinCompose (default)
+        #define OS_UNICODE_TRAIL &macro_release &kp LALT  // Windows
     #endif
 #endif
 
@@ -172,19 +172,19 @@
       wait-ms = <20>;
       tap-ms = <20>;
       bindings = <OS_UNICODE_LEAD>
-              ,  <&macro_tap &kp N2 &kp N0 &kp N3 &kp E>
+              ,  <&macro_tap &kp KP_PLUS &kp N2 &kp N0 &kp N3 &kp E>
               ,  <OS_UNICODE_TRAIL>
               ,  <&macro_tap &kp BACKSLASH>
               ,  <&macro_tap &kp UNDERSCORE>
               ,  <&macro_tap &kp LEFT_PARENTHESIS>
               ,  <OS_UNICODE_LEAD>
-              ,  <&macro_tap &kp N3 &kp N0 &kp C &kp N4>
+              ,  <&macro_tap &kp KP_PLUS &kp N3 &kp N0 &kp C &kp N4>
               ,  <OS_UNICODE_TRAIL>
               ,  <&macro_tap &kp RIGHT_PARENTHESIS>
               ,  <&macro_tap &kp UNDERSCORE>
               ,  <&macro_tap &kp SLASH>
               ,  <OS_UNICODE_LEAD>
-              ,  <&macro_tap &kp N2 &kp N0 &kp N3 &kp E>
+              ,  <&macro_tap &kp KP_PLUS &kp N2 &kp N0 &kp N3 &kp E>
               ,  <OS_UNICODE_TRAIL>;
     )
     };
