@@ -107,7 +107,7 @@
       label = "RST_BOOT";
       #binding-cells = <0>;
       tapping-term-ms = <200>;
-      bindings = <&reset>, <&bootloader>;
+      bindings = <&sys_reset>, <&bootloader>;
     };
 
     // tap: sticky shift | double tap: capsword | triple tap: cancel capsword
