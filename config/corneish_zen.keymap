@@ -165,7 +165,7 @@
 // ¯\_(ツ)_/¯
 
 // Thumb keys for base layer
-#define THUMB1 &lt LT_FN2 ESC
+#define THUMB1 &lt LY_FN2 ESC
 #define THUMB2 &lt LY_FN1 TAB
 #define THUMB3 &lt LY_NAV SPACE
 #define THUMB4 &lt LY_NUM BSPC
