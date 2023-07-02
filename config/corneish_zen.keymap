@@ -42,9 +42,10 @@
 #define LY_NAV  2
 #define LY_FN1  3
 #define LY_FN2  4
-#define LY_MISC 5
-#define LY_GAM  6
-#define LY_GNUM 7
+#define LY_MIS1 5
+#define LY_MIS2 6
+#define LY_GAM  7
+#define LY_GNUM 8
 
 // Configuration for sticky-key behavior
 &sk {
@@ -137,6 +138,14 @@
       bindings = <&to LY_BASE>, <&to LY_GAM>;
     };
 
+    td_tab_fn_lys: td_tab_fn_lys {
+      compatible = "zmk,behavior-tap-dance";
+      label = "TD_TAB_FN_LYS";
+      #binding-cells = <0>;
+      tapping-term-ms = <200>;
+      bindings = <&lt LY_FN1 TAB>, <&lt LY_FN2 TAB>;
+    };
+
     lt2: lt2 {
       label = "ZB_lt2";
       compatible = "zmk,behavior-hold-tap";
@@ -165,11 +174,11 @@
 // ¯\_(ツ)_/¯
 
 // Thumb keys for base layer
-#define THUMB1 &lt LY_FN2 ESC
-#define THUMB2 &lt LY_FN1 TAB
+#define THUMB1 &lt LY_MIS2 ESC
+#define THUMB2 &td_tab_fn_lys
 #define THUMB3 &lt LY_NAV SPACE
 #define THUMB4 &lt LY_NUM BSPC
-#define THUMB5 &lt LY_MISC DEL
+#define THUMB5 &lt LY_MIS1 DEL
 #define THUMB6 &td_layers
 
 / {
@@ -195,7 +204,7 @@
       // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
       // ├ Custom Shft ┼      ;      ┼  RALT / Q   ┼      J      ┼      K      ┼      X      ┤ ├      B      ┼      M      ┼      W      ┼  RALT / V   ┼      Z      ┼    ENTER    ┤
       // ╰───────────────────────────┴─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┴───────────────────────────╯
-      //                                           ├     ESC     ┼  TAB / LT3  ┼  SPC / LT2  ┤ ├  BKSP / LT1 ┼  DEL / LT4  ┼    TO L5    ┤
+      //                                           ├ ESC / MSC2  ┼ TAB / FN_LY ┼  SPC / LT2  ┤ ├  BKSP / LT1 ┼ DEL / MSC1  ┼ TO GAMES LY ┤
       //                                           ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
           &kp BSLH      &kp SQT       &kp COMMA     &kp DOT       &kp P         &kp Y           &kp F         &kp G         &kp C         &kp R         &kp L         &kp FSLH
           &kp GRAVE     &hmsl LSHFT A &hml LALT O   &hml LGUI E   &hml LCTRL U  &kp I           &kp D         &hmr LCTRL H  &hmr LGUI T   &hmr LALT N   &hmsr LSHFT S &kp MINUS
@@ -271,12 +280,12 @@
       // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
       // ├             ┼     F21     ┼     F22     ┼     F23     ┼     F24     ┼             ┤ ├             ┼             ┼             ┼     RALT    ┼             ┼             ┤
       // ╰───────────────────────────┴─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┴───────────────────────────╯
-      //                                           ├  // HELD // ┼             ┼             ┤ ├    BKSP     ┼     DEL     ┼             ┤
+      //                                           ├             ┼  // HELD // ┼             ┤ ├    BKSP     ┼     DEL     ┼             ┤
       //                                           ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
           &none         &kp F13       &kp F14       &kp F15       &kp F16       &none           &none         &none         &none         &none         &none         &none
           &none         &kp F17       &kp F18       &kp F19       &kp F20       &none           &none         &kp LCTRL     &kp LGUI      &kp LALT      &kp LSHFT     &none
           &none         &kp F21       &kp F22       &kp F23       &kp F24       &none           &none         &none         &none         &kp RALT      &none         &none
-                                                    &trans        &none         &none           &kp BSPC      &kp DEL       &none
+                                                    &none         &trans        &none           &kp BSPC      &kp DEL       &none
       >;
     };
 
@@ -286,16 +295,35 @@
       // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
       // ├             ┼             ┼             ┼             ┼             ┼             ┤ ├             ┼ Folder Up   ┼ Win Explorer┼             ┼             ┼             ┤
       // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-      // ├             ┼    Undo     ┼     Cut     ┼    Copy     ┼    Paste    ┼  1Password  ┤ ├ Git Graph   ┼  Terminal   ┼ Prev Term   ┼ Next Term   ┼ New Term    ┼             ┤
+      // ├             ┼             ┼             ┼             ┼             ┼             ┤ ├ Git Graph   ┼  Terminal   ┼ Prev Term   ┼ Next Term   ┼ New Term    ┼             ┤
       // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-      // ├ Clr BT prof ┼ BT prof 1   ┼ BT prof 2   ┼ BT prof 3   ┼ BT prof 4   ┼ BT prof 5   ┤ ├ Play/Pause  ┼ Media Prev  ┼  Vol Down   ┼   Vol Up    ┼ Media Next  ┼    Mute     ┤
+      // ├             ┼             ┼             ┼             ┼             ┼             ┤ ├ Play/Pause  ┼ Media Prev  ┼  Vol Down   ┼   Vol Up    ┼ Media Next  ┼    Mute     ┤
       // ╰───────────────────────────┴─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┴───────────────────────────╯
-      //                                           ├ Rst/Bootldr ┼ Out Toggle  ┼             ┤ ├             ┼ // HELD //  ┼ Rst/Bootldr ┤
+      //                                           ├             ┼             ┼             ┤ ├             ┼ // HELD //  ┼             ┤
       //                                           ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
           &none         &none         &none         &none         &none         &none           &none         &kp FOLDER_UP &kp LG(E)     &none         &none         &none
-          &none         &kp LC(Z)     &kp LC(X)     &kp LC(C)     &kp LC(V)     &kp LC(LS(X))   &kp GIT_GRAPH &kp TERM      &kp PRV_TERM  &kp NXT_TERM  &kp NEW_TERM  &none
-          &bt BT_CLR    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &kp C_PP      &kp C_PREV    &kp C_VOL_DN  &kp C_VOL_UP  &kp C_NEXT    &kp C_MUTE
-                                                    &rst_boot     &out OUT_TOG  &none           &none         &trans        &rst_boot
+          &none         &none         &none         &none         &none         &none           &kp GIT_GRAPH &kp TERM      &kp PRV_TERM  &kp NXT_TERM  &kp NEW_TERM  &none
+          &none         &none         &none         &none         &none         &none           &kp C_PP      &kp C_PREV    &kp C_VOL_DN  &kp C_VOL_UP  &kp C_NEXT    &kp C_MUTE
+                                                    &none         &none         &none           &none         &trans        &none
+      >;
+    };
+
+    misc2_layer {
+      label = "MISC 2";
+      bindings = <
+      // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
+      // ├ Rst/Bootldr ┼             ┼             ┼             ┼             ┼ Out Toggle  ┤ ├             ┼             ┼             ┼             ┼             ┼ Rst/Bootldr ┤
+      // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+      // ├             ┼    Undo     ┼     Cut     ┼    Copy     ┼    Paste    ┼  1Password  ┤ ├             ┼             ┼             ┼             ┼             ┼             ┤
+      // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+      // ├ Clr BT prof ┼ BT prof 1   ┼ BT prof 2   ┼ BT prof 3   ┼ BT prof 4   ┼ BT prof 5   ┤ ├             ┼             ┼             ┼             ┼             ┼             ┤
+      // ╰───────────────────────────┴─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┴───────────────────────────╯
+      //                                           ├ // HELD //  ┼             ┼             ┤ ├             ┼             ┼             ┤
+      //                                           ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
+          &rst_boot     &none         &none         &none         &none         &out OUT_TOG    &none         &none         &none         &none         &none         &rst_boot
+          &none         &kp LC(Z)     &kp LC(X)     &kp LC(C)     &kp LC(V)     &kp LC(LS(X))   &none         &none         &none         &none         &none         &none
+          &bt BT_CLR    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &none         &none         &none         &none         &none         &none
+                                                    &trans        &none         &none           &none         &none         &none
       >;
     };
 
