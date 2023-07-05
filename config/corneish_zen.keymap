@@ -138,14 +138,6 @@
       bindings = <&to LY_BASE>, <&to LY_GAM>;
     };
 
-    td_tab_fn_lys: td_tab_fn_lys {
-      compatible = "zmk,behavior-tap-dance";
-      label = "TD_TAB_FN_LYS";
-      #binding-cells = <0>;
-      tapping-term-ms = <200>;
-      bindings = <&lt LY_FN1 TAB>, <&lt LY_FN2 TAB>;
-    };
-
     lt2: lt2 {
       label = "ZB_lt2";
       compatible = "zmk,behavior-hold-tap";
@@ -155,6 +147,14 @@
       tapping-term-ms = <TAP_TERM_MS>;
       quick-tap-ms = <QUICK_TAP_MS>;
       global-quick-tap-ms = <GLOBAL_QUICK_TAP_MS>; // requires PR #1387, currently obtained by using urob's fork of zmk
+    };
+
+    td_tab_fn_lys: td_tab_fn_lys {
+      compatible = "zmk,behavior-tap-dance";
+      label = "TD_TAB_FN_LYS";
+      #binding-cells = <0>;
+      tapping-term-ms = <200>;
+      bindings = <&lt2 LY_FN1 TAB>, <&lt2 LY_FN2 TAB>; // Use lt2 over lt so it is balanced instead of tap-preferred
     };
   };
 };
