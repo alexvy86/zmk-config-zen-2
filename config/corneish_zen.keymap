@@ -155,7 +155,7 @@
       #binding-cells = <2>;
       flavor = "hold-preferred";
       bindings = <&mo>, <&kp>;
-      tapping-term-ms = <TAP_TERM_MS>;
+      tapping-term-ms = 1; // Experiment: see if this makes it so interrupting the tap-dance with another key immediately causes the hold-tap's hold behavior to trigger
       quick-tap-ms = <QUICK_TAP_MS>;
       global-quick-tap-ms = <GLOBAL_QUICK_TAP_MS>; // requires PR #1387, currently obtained by using urob's fork of zmk
     };
