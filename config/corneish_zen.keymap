@@ -149,12 +149,25 @@
       global-quick-tap-ms = <GLOBAL_QUICK_TAP_MS>; // requires PR #1387, currently obtained by using urob's fork of zmk
     };
 
+    lt_hp: lt_hp {
+      label = "ZB_lt_hp";
+      compatible = "zmk,behavior-hold-tap";
+      #binding-cells = <2>;
+      flavor = "hold-preferred";
+      bindings = <&mo>, <&kp>;
+      tapping-term-ms = <TAP_TERM_MS>;
+      quick-tap-ms = <QUICK_TAP_MS>;
+      global-quick-tap-ms = <GLOBAL_QUICK_TAP_MS>; // requires PR #1387, currently obtained by using urob's fork of zmk
+    };
+
     td_tab_fn_lys: td_tab_fn_lys {
       compatible = "zmk,behavior-tap-dance";
       label = "TD_TAB_FN_LYS";
       #binding-cells = <0>;
       tapping-term-ms = <200>;
-      bindings = <&lt2 LY_FN1 TAB>, <&lt2 LY_FN2 TAB>; // Use lt2 over lt so it is balanced instead of tap-preferred
+      // Inside a tap-dance, only a hold-preferred hold-tap seems to work; I think tap-dance resolves immediately on detecting another key *press*, so not even a balanced hold-tap works (I tried).
+      // So use &lt_hp
+      bindings = <&lt_hp LY_FN1 TAB>, <&lt_hp LY_FN2 TAB>;
     };
   };
 };
