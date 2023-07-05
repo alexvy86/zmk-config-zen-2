@@ -164,10 +164,10 @@
       compatible = "zmk,behavior-tap-dance";
       label = "TD_TAB_FN_LYS";
       #binding-cells = <0>;
-      tapping-term-ms = <200>;
+      tapping-term-ms = <TAP_TERM_MS>;
       // Inside a tap-dance, only a hold-preferred hold-tap seems to work; I think tap-dance resolves immediately on detecting another key *press*, so not even a balanced hold-tap works (I tried).
       // So use &lt_hp
-      bindings = <&lt_hp LY_FN1 TAB>, <&lt_hp LY_FN2 TAB>;
+      bindings = <&lt_hp LY_FN1 TAB>, <&mo LY_FN2>;
     };
   };
 };
