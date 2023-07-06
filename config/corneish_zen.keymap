@@ -41,11 +41,10 @@
 #define LY_NUM  1
 #define LY_NAV  2
 #define LY_FN1  3
-#define LY_FN2  4
-#define LY_MIS1 5
-#define LY_MIS2 6
-#define LY_GAM  7
-#define LY_GNUM 8
+#define LY_MIS1 4
+#define LY_MIS2 5
+#define LY_GAM  6
+#define LY_GNUM 7
 
 // Configuration for sticky-key behavior
 &sk {
@@ -148,27 +147,6 @@
       quick-tap-ms = <QUICK_TAP_MS>;
       global-quick-tap-ms = <GLOBAL_QUICK_TAP_MS>; // requires PR #1387, currently obtained by using urob's fork of zmk
     };
-
-    lt_hp: lt_hp {
-      label = "ZB_lt_hp";
-      compatible = "zmk,behavior-hold-tap";
-      #binding-cells = <2>;
-      flavor = "hold-preferred";
-      bindings = <&mo>, <&kp>;
-      tapping-term-ms = <1>; // Experiment: see if this makes it so interrupting the tap-dance with another key immediately causes the hold-tap's hold behavior to trigger
-      quick-tap-ms = <QUICK_TAP_MS>;
-      // global-quick-tap-ms = <GLOBAL_QUICK_TAP_MS>; // requires PR #1387, currently obtained by using urob's fork of zmk
-    };
-
-    td_tab_fn_lys: td_tab_fn_lys {
-      compatible = "zmk,behavior-tap-dance";
-      label = "TD_TAB_FN_LYS";
-      #binding-cells = <0>;
-      tapping-term-ms = <TAP_TERM_MS>;
-      // Inside a tap-dance, only a hold-preferred hold-tap seems to work; I think tap-dance resolves immediately on detecting another key *press*, so not even a balanced hold-tap works (I tried).
-      // So use &lt_hp
-      bindings = <&lt_hp LY_FN1 TAB>, <&mo LY_FN2>;
-    };
   };
 };
 
@@ -188,7 +166,7 @@
 
 // Thumb keys for base layer
 #define THUMB1 &lt LY_MIS2 ESC
-#define THUMB2 &td_tab_fn_lys
+#define THUMB2 &lt LY_FN1 TAB  
 #define THUMB3 &lt LY_NAV SPACE
 #define THUMB4 &lt LY_NUM BSPC
 #define THUMB5 &lt LY_MIS1 DEL
@@ -279,25 +257,6 @@
           &kp INSERT    &kp F1        &kp F2        &kp F3        &mt LA(F4) F4 &kp PSCRN       &none         &none         &none         &none         &none         &none
           &kp CAPS      &kp F5        &kp F6        &kp F7        &kp F8        &kp SLCK        &none         &kp LCTRL     &kp LGUI      &kp LALT      &kp LSHFT     &none
           &kp CA_LSFT   &kp F9        &kp F10       &kp F11       &kp F12       &kp PAUSE_BREAK &none         &none         &none         &kp RALT      &none         &none
-                                                    &none         &trans        &none           &kp BSPC      &kp DEL       &none
-      >;
-    };
-
-    function_layer_2 {
-      label = "FUNC2";
-      bindings = <
-      // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-      // ├             ┼     F13     ┼     F14     ┼     F15     ┼     F16     ┼             ┤ ├             ┼             ┼             ┼             ┼             ┼             ┤
-      // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-      // ├             ┼     F17     ┼     F18     ┼     F19     ┼     F20     ┼             ┤ ├             ┼    LCTRL    ┼     LGUI    ┼     LALT    ┼    LSHFT    ┼             ┤
-      // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-      // ├             ┼     F21     ┼     F22     ┼     F23     ┼     F24     ┼             ┤ ├             ┼             ┼             ┼     RALT    ┼             ┼             ┤
-      // ╰───────────────────────────┴─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┴───────────────────────────╯
-      //                                           ├             ┼  // HELD // ┼             ┤ ├    BKSP     ┼     DEL     ┼             ┤
-      //                                           ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
-          &none         &kp F13       &kp F14       &kp F15       &kp F16       &none           &none         &none         &none         &none         &none         &none
-          &none         &kp F17       &kp F18       &kp F19       &kp F20       &none           &none         &kp LCTRL     &kp LGUI      &kp LALT      &kp LSHFT     &none
-          &none         &kp F21       &kp F22       &kp F23       &kp F24       &none           &none         &none         &none         &kp RALT      &none         &none
                                                     &none         &trans        &none           &kp BSPC      &kp DEL       &none
       >;
     };
