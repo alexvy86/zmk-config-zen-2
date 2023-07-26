@@ -161,7 +161,7 @@
 #define THUMB2 &lt LY_FN1 TAB  
 #define THUMB3 &lt LY_NAV SPACE
 #define THUMB4 &lt LY_NUM BSPC
-#define THUMB5 &lt_sk LY_MIS1 SHIFT
+#define THUMB5 &lt_sk LY_MIS1 LSHFT
 #define THUMB6 &td_layers
 
 / {
