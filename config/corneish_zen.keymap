@@ -129,12 +129,12 @@
       bindings = <&to LY_BASE>, <&to LY_GAM>;
     };
 
-    lt2: lt2 {
-      label = "ZB_lt2";
+    lt_sk: lt_sk {
+      label = "ZB_lt_sk";
       compatible = "zmk,behavior-hold-tap";
       #binding-cells = <2>;
       flavor = "balanced";
-      bindings = <&mo>, <&kp>;
+      bindings = <&mo>, <&sk>;
       tapping-term-ms = <TAP_TERM_MS>;
       quick-tap-ms = <QUICK_TAP_MS>;
       global-quick-tap-ms = <GLOBAL_QUICK_TAP_MS>; // requires PR #1387, currently obtained by using urob's fork of zmk
@@ -161,7 +161,7 @@
 #define THUMB2 &lt LY_FN1 TAB  
 #define THUMB3 &lt LY_NAV SPACE
 #define THUMB4 &lt LY_NUM BSPC
-#define THUMB5 &lt LY_MIS1 DEL
+#define THUMB5 &lt_sk LY_MIS1 SHIFT
 #define THUMB6 &td_layers
 
 / {
@@ -187,7 +187,7 @@
       // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
       // ├ Custom Shft ┼      ;      ┼  RALT / Q   ┼      J      ┼      K      ┼      X      ┤ ├      B      ┼      M      ┼      W      ┼  RALT / V   ┼      Z      ┼    ENTER    ┤
       // ╰───────────────────────────┴─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┴───────────────────────────╯
-      //                                           ├ ESC / MSC2  ┼ TAB / FN_LY ┼  SPC / LT2  ┤ ├  BKSP / LT1 ┼ DEL / MSC1  ┼ TO GAMES LY ┤
+      //                                           ├ ESC / MSC2  ┼ TAB / FN_LY ┼  SPC / LT2  ┤ ├  BKSP / LT1 ┼ SSHFT / MSC1┼ TO GAMES LY ┤
       //                                           ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
           &kp BSLH      &kp SQT       &kp COMMA     &kp DOT       &kp P         &kp Y           &kp F         &kp G         &kp C         &kp R         &kp L         &kp FSLH
           &kp GRAVE     &hmsl LSHFT A &hml LALT O   &hml LGUI E   &hml LCTRL U  &kp I           &kp D         &hmr LCTRL H  &hmr LGUI T   &hmr LALT N   &hmsr LSHFT S &kp MINUS
@@ -225,12 +225,12 @@
       // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
       // ├             ┼ PRV VIR DSK ┼ NXT VIR DSK ┼  PREV TAB   ┼  NEXT TAB   ┼ CTRL ALT TAB┤ ├     SPC     ┼             ┼             ┼             ┼             ┼             ┤
       // ╰───────────────────────────┴─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┴───────────────────────────╯
-      //                                           ├             ┼             ┼ // HELD //  ┤ ├    BKSP     ┼     DEL     ┼             ┤
+      //                                           ├             ┼             ┼ // HELD //  ┤ ├     DEL     ┼             ┼             ┤
       //                                           ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
           &none         &kp GS_LFT    &kp G_LFT     &kp G_RGT     &kp GS_RGT    &none           &none         &none         &kp PG_UP      &kp PG_DN    &none         &none
           &none         &kp LSHFT     &kp LALT      &kp LGUI      &kp LCTRL     &kp K_APP       &kp HOME      &kp LEFT      &kp UP         &kp DOWN     &kp RIGHT     &kp END
           &none         &kp PRV_VD    &kp NXT_VD    &kp PRV_TAB   &kp NXT_TAB   &kp CA_TAB      &kp SPACE     &none         &none          &none        &none         &none
-                                                    &none         &none         &trans          &kp BSPC      &kp DEL       &none
+                                                    &none         &none         &trans          &kp DEL       &none         &none
       >;
     };
 
@@ -244,12 +244,12 @@
       // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
       // ├ Discord PTT ┼     F9      ┼     F10     ┼     F11     ┼     F12     ┼   PAUSE     ┤ ├             ┼             ┼             ┼     RALT    ┼             ┼             ┤
       // ╰───────────────────────────┴─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┴───────────────────────────╯
-      //                                           ├             ┼ // HELD //  ┼             ┤ ├    BKSP     ┼     DEL     ┼             ┤
+      //                                           ├             ┼ // HELD //  ┼             ┤ ├    BKSP     ┼             ┼             ┤
       //                                           ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
           &kp INSERT    &kp F1        &kp F2        &kp F3        &mt LA(F4) F4 &kp PSCRN       &none         &none         &none         &none         &none         &none
           &kp CAPS      &kp F5        &kp F6        &kp F7        &kp F8        &kp SLCK        &none         &kp LCTRL     &kp LGUI      &kp LALT      &kp LSHFT     &none
           &kp CA_LSFT   &kp F9        &kp F10       &kp F11       &kp F12       &kp PAUSE_BREAK &none         &none         &none         &kp RALT      &none         &none
-                                                    &none         &trans        &none           &kp BSPC      &kp DEL       &none
+                                                    &none         &trans        &none           &kp BSPC      &none         &none
       >;
     };
 
