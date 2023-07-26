@@ -112,14 +112,6 @@
       hold-trigger-key-positions = <KEYS_L THUMBS>;
     };
 
-    rst_boot: rst_boot {
-      compatible = "zmk,behavior-tap-dance";
-      label = "RST_BOOT";
-      #binding-cells = <0>;
-      tapping-term-ms = <200>;
-      bindings = <&sys_reset>, <&bootloader>;
-    };
-
     // tap: sticky shift | double tap: capsword | triple tap: cancel capsword
     td_shft: td_shft {
       compatible = "zmk,behavior-tap-dance";
@@ -283,8 +275,9 @@
     misc2_layer {
       label = "MISC 2";
       bindings = <
+      // NOTE: &sys_reset and &bootloader need to be directly bound to a key for locality (correct half affected) to work, see https://github.com/zmkfirmware/zmk/issues/1494
       // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-      // ├ Rst/Bootldr ┼             ┼             ┼             ┼             ┼ Out Toggle  ┤ ├             ┼             ┼             ┼             ┼             ┼ Rst/Bootldr ┤
+      // ├    Reset    ┼ Bootloader  ┼             ┼             ┼             ┼ Out Toggle  ┤ ├             ┼             ┼             ┼             ┼ Bootloader  ┼    Reset    ┤
       // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
       // ├             ┼    Undo     ┼     Cut     ┼    Copy     ┼    Paste    ┼  1Password  ┤ ├             ┼             ┼             ┼             ┼             ┼             ┤
       // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
@@ -292,7 +285,7 @@
       // ╰───────────────────────────┴─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┴───────────────────────────╯
       //                                           ├ // HELD //  ┼             ┼             ┤ ├             ┼             ┼             ┤
       //                                           ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
-          &rst_boot     &none         &none         &none         &none         &out OUT_TOG    &none         &none         &none         &none         &none         &rst_boot
+          &sys_reset    &bootloader   &none         &none         &none         &out OUT_TOG    &none         &none         &none         &none         &bootloader   &sys_reset
           &none         &kp LC(Z)     &kp LC(X)     &kp LC(C)     &kp LC(V)     &kp LC(LS(X))   &none         &none         &none         &none         &none         &none
           &bt BT_CLR    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &none         &none         &none         &none         &none         &none
                                                     &trans        &none         &none           &none         &none         &none
