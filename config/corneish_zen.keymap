@@ -133,12 +133,12 @@
       bindings = <&to LY_BASE>, <&to LY_GAM>;
     };
 
-    lt_sk: lt_sk {
-      label = "ZB_lt_sk";
+    lt_customshift: lt_customshift {
+      label = "ZB_lt_customshift";
       compatible = "zmk,behavior-hold-tap";
       #binding-cells = <2>;
       flavor = "balanced";
-      bindings = <&mo>, <&sk>;
+      bindings = <&mo>, <&td_shft>;
       tapping-term-ms = <TAP_TERM_MS>;
       quick-tap-ms = <QUICK_TAP_MS>;
       global-quick-tap-ms = <GLOBAL_QUICK_TAP_MS>; // requires PR #1387, currently obtained by using urob's fork of zmk
@@ -164,7 +164,7 @@
 #define THUMB1 &lt LY_MIS2 ESC
 #define THUMB2 &lt LY_FN1 TAB
 #define THUMB3 &lt LY_NAV SPACE
-#define THUMB4 &lt_sk LY_NUM LSHFT
+#define THUMB4 &lt_customshift LY_NUM 0
 #define THUMB5 &lt LY_MIS1 BSPC
 #define THUMB6 &td_layers
 
