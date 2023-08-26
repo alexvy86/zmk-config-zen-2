@@ -139,9 +139,9 @@
       #binding-cells = <2>;
       flavor = "balanced";
       bindings = <&mo>, <&td_shft>;
-      tapping-term-ms = <100>;
+      tapping-term-ms = <TAP_TERM_MS>;
       quick-tap-ms = <QUICK_TAP_MS>;
-      global-quick-tap-ms = <GLOBAL_QUICK_TAP_MS>; // requires PR #1387, currently obtained by using urob's fork of zmk
+      // global-quick-tap-ms = <-1>; // requires PR #1387, currently obtained by using urob's fork of zmk
     };
   };
 };
