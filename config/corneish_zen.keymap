@@ -223,16 +223,16 @@
       label = "NAV";
       bindings = <
       // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-      // ├             ┼ WIN PRV MON ┼ SNP WIN LFT ┼ SNP WIN RGT ┼ WIN NXT MON ┼             ┤ ├             ┼             ┼   PAGE UP   ┼  PAGE DOWN  ┼             ┼             ┤
+      // ├  Alt + F4   ┼ WIN PRV MON ┼ SNP WIN LFT ┼ SNP WIN RGT ┼ WIN NXT MON ┼             ┤ ├             ┼             ┼   PAGE UP   ┼  PAGE DOWN  ┼             ┼             ┤
       // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-      // ├  Alt + F4   ┼    LSHFT    ┼     LALT    ┼     LGUI    ┼    LCTRL    ┼ CONTEXT MENU┤ ├     HOME    ┼    LEFT     ┼     UP      ┼     DOWN    ┼    RIGHT    ┼     END     ┤
+      // ├             ┼    LSHFT    ┼     LALT    ┼     LGUI    ┼    LCTRL    ┼ CONTEXT MENU┤ ├     HOME    ┼    LEFT     ┼     UP      ┼     DOWN    ┼    RIGHT    ┼     END     ┤
       // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
       // ├             ┼ PRV VIR DSK ┼ NXT VIR DSK ┼  PREV TAB   ┼  NEXT TAB   ┼ CTRL ALT TAB┤ ├     SPC     ┼             ┼             ┼             ┼             ┼             ┤
       // ╰───────────────────────────┴─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┴───────────────────────────╯
       //                                           ├             ┼             ┼ // HELD //  ┤ ├     BKSP    ┼     DEL     ┼             ┤
       //                                           ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
-          &none         &kp GS_LFT    &kp G_LFT     &kp G_RGT     &kp GS_RGT    &none           &none         &none         &kp PG_UP      &kp PG_DN    &none         &none
-          &kp LA(F4)    &kp LSHFT     &kp LALT      &kp LGUI      &kp LCTRL     &kp K_APP       &kp HOME      &kp LEFT      &kp UP         &kp DOWN     &kp RIGHT     &kp END
+          &kp LA(F4)    &kp GS_LFT    &kp G_LFT     &kp G_RGT     &kp GS_RGT    &none           &none         &none         &kp PG_UP      &kp PG_DN    &none         &none
+          &none         &kp LSHFT     &kp LALT      &kp LGUI      &kp LCTRL     &kp K_APP       &kp HOME      &kp LEFT      &kp UP         &kp DOWN     &kp RIGHT     &kp END
           &none         &kp PRV_VD    &kp NXT_VD    &kp PRV_TAB   &kp NXT_TAB   &kp CA_TAB      &kp SPACE     &none         &none          &none        &none         &none
                                                     &none         &none         &trans          &kp BSPC      &kp DEL       &none
       >;
