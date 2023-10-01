@@ -289,12 +289,12 @@
       // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
       // ├ Discord PTT ┼     F9      ┼     F10     ┼     F11     ┼     F12     ┼ Scroll Lock ┤ ├             ┼     F21     ┼     F22     ┼     F23     ┼     F24     ┼             ┤
       // ╰───────────────────────────┴─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┴───────────────────────────╯
-      //                                           ├ // HELD //  ┼             ┼             ┤ ├    BKSP     ┼     DEL     ┼             ┤
+      //                                           ├ // HELD //  ┼             ┼             ┤ ├             ┼             ┼             ┤
       //                                           ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
           &sl LY_SYS    &kp F1        &kp F2        &kp F3        &kp F4        &kp PS_BRK      &kp INSERT    &kp F13       &kp F14       &kp F15       &kp F16       &none
           &kp CAPS      &hmsl LSHFT F5 &hml LALT F6 &hml LGUI F7  &hml LCTRL F8 &kp PSCRN       &none         &hmr LCTRL F17 &hmr LGUI F18 &hmr LALT F19 &hmsr LSHFT F20 &none
           &kp CA_LSFT   &kp F9        &kp F10       &kp F11       &kp F12       &kp SLCK        &none         &kp F21       &kp F22       &kp F23       &kp F24       &none
-                                                    &trans        &none         &none           &kp BSPC      &kp DEL       &none
+                                                    &trans        &none         &none           &none         &none         &none
       >;
     };
 
