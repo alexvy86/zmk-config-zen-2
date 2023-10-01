@@ -46,11 +46,12 @@
 #define LY_BASE 0
 #define LY_NUM  1
 #define LY_NAV  2
-#define LY_FN1  3
-#define LY_MIS1 4
-#define LY_MIS2 5
-#define LY_GAM  6
-#define LY_GNUM 7
+#define LY_MIS1 3
+#define LY_MIS2 4
+#define LY_FN   5
+#define LY_SYS  6
+#define LY_GAM  7
+#define LY_GNUM 8
 
 // Configuration for sticky-key behavior
 &sk {
@@ -163,11 +164,11 @@
 // ¯\_(ツ)_/¯
 
 // Thumb keys for base layer
-#define THUMB1 &lt LY_MIS2 ESC
-#define THUMB2 &lt LY_FN1 TAB
+#define THUMB1 &lt LY_FN ESC
+#define THUMB2 &lt LY_MIS1 TAB
 #define THUMB3 &lt LY_NAV SPACE
 #define THUMB4 &lt_customshift LY_NUM 0
-#define THUMB5 &lt LY_MIS1 BSPC
+#define THUMB5 &lt LY_MIS2 BSPC
 #define THUMB6 &td_layers
 
 / {
@@ -193,12 +194,12 @@
       // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
       // ├ Custom Shft ┼      ;      ┼  RALT / Q   ┼      J      ┼      K      ┼      X      ┤ ├      B      ┼      M      ┼      W      ┼  RALT / V   ┼      Z      ┼    ENTER    ┤
       // ╰───────────────────────────┴─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┴───────────────────────────╯
-      //                                           ├ ESC / MSC2  ┼ TAB / FN_LY ┼  SPC / LT2  ┤ ├ SSHFT / LT1 ┼ BKSP / MSC1 ┼ TO GAMES LY ┤
+      //                                           ├ ESC / LY_FN ┼ TAB / LY_MS1┼ SPC / LY_NAV┤ ├ SS / LY_NUM ┼BKSP / LY_MS2┼ TO GAMES LY ┤
       //                                           ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
           &kp BSLH      &kp SQT       &kp COMMA     &kp DOT       &kp P         &kp Y           &kp F         &kp G         &kp C         &kp R         &kp L         &kp FSLH
           &kp GRAVE     &hmsl LSHFT A &hml LALT O   &hml LGUI E   &hml LCTRL U  &kp I           &kp D         &hmr LCTRL H  &hmr LGUI T   &hmr LALT N   &hmsr LSHFT S &kp MINUS
           &td_shft      &kp SEMI      &hml RALT Q   &kp J         &kp K         &kp X           &kp B         &kp M         &kp W         &hmr RALT V   &kp Z         &kp RET
-                                                    THUMB1        THUMB2        THUMB3          THUMB4        THUMB5        &td_layers
+                                                    THUMB1        THUMB2        THUMB3          THUMB4        THUMB5        THUMB6
       >;
     };
 
@@ -240,61 +241,80 @@
       >;
     };
 
-    function_layer {
-      label = "FUNC";
-      bindings = <
-      // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-      // ├  Pause/Brk  ┼   INSERT    ┼  CAPS LOCK  ┼ Scroll Lock ┼ PrintScreen ┼             ┤ ├             ┼             ┼             ┼             ┼             ┼             ┤
-      // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-      // ├     F1      ┼  LSHFT / F2 ┼  LALT / F3  ┼  LGUI / F4  ┼  LCTRL / F5 ┼     F6      ┤ ├     F7      ┼  LCTRL / F8 ┼  LGUI / F9  ┼  LALT / F10 ┼ LSHFT / F11 ┼     F12     ┤
-      // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-      // ├ Discord PTT ┼    Undo     ┼     Cut     ┼    Copy     ┼    Paste    ┼             ┤ ├ Play/Pause  ┼ Media Prev  ┼  Vol Down   ┼   Vol Up    ┼ Media Next  ┼    Mute     ┤
-      // ╰───────────────────────────┴─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┴───────────────────────────╯
-      //                                           ├             ┼ // HELD //  ┼             ┤ ├    BKSP     ┼     DEL     ┼             ┤
-      //                                           ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
-          &kp PS_BRK    &kp INSERT    &kp CAPS      &kp SLCK      &kp PSCRN     &none           &none         &none         &none         &none         &none         &none
-          &kp F1        &hmsl LSHFT F2 &hml LALT F3 &hml LGUI F4  &hml LCTRL F5 &kp F6          &kp F7        &hmr LCTRL F8 &hmr LGUI F9  &hmr LALT F10 &hmsr LSHFT F11 &kp F12
-          &kp CA_LSFT   &kp LC(Z)     &kp LC(X)     &kp LC(C)     &kp LC(V)     &none           &kp C_PP      &kp C_PREV    &kp C_VOL_DN  &kp C_VOL_UP  &kp C_NEXT    &kp C_MUTE
-                                                    &none         &trans        &none           &kp BSPC      &kp DEL       &none
-      >;
-    };
-
     misc1_layer {
       label = "MISC 1";
       bindings = <
       // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-      // ├             ┼             ┼             ┼             ┼             ┼             ┤ ├             ┼             ┼ Win Explorer┼             ┼             ┼             ┤
+      // ├             ┼ Next Fold Up┼  File Hist  ┼ GH Permalink┼  Git Graph  ┼             ┤ ├             ┼             ┼             ┼             ┼             ┼             ┤
       // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-      // ├             ┼             ┼             ┼             ┼             ┼             ┤ ├ Git Graph   ┼  Terminal   ┼ Prev Term   ┼ Next Term   ┼ New Term    ┼             ┤
+      // ├ Win Explorer┼    Undo     ┼     Cut     ┼    Copy     ┼    Paste    ┼ PwrToys Run ┤ ├             ┼  Terminal   ┼ Prev Term   ┼ Next Term   ┼ New Term    ┼             ┤
       // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-      // ├             ┼             ┼             ┼             ┼             ┼             ┤ ├ Next Fold Up┼  File Hist  ┼ GH Permalink┼ Trm Height+ ┼ Trm Height- ┼             ┤
+      // ├             ┼             ┼             ┼  1Pswd Win  ┼  1Pswd Brw  ┼             ┤ ├             ┼ Trm Height+ ┼ Trm Height- ┼             ┼             ┼             ┤
       // ╰───────────────────────────┴─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┴───────────────────────────╯
-      //                                           ├             ┼             ┼             ┤ ├             ┼ // HELD //  ┼             ┤
+      //                                           ├             ┼ // HELD //  ┼             ┤ ├             ┼             ┼             ┤
       //                                           ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
-          &none         &none         &none         &none         &none         &none           &none         &none         &kp LG(E)     &none         &none         &none
-          &none         &none         &none         &none         &none         &none           &kp GIT_GRAPH &kp TERM      &kp PRV_TERM  &kp NXT_TERM  &kp NEW_TERM  &none
-          &none         &none         &none         &none         &none         &none           &kp FOLD_UP   &kp FILE_HIST &kp GH_PERMA  &kp F23       &kp F24       &none
-                                                    &none         &none         &none           &none         &trans        &none
+          &none         &kp FOLD_UP   &kp FILE_HIST &kp GH_PERMA  &kp GIT_GRAPH &none           &none         &none         &none         &none         &none         &none
+          &kp LG(E)     &kp LC(Z)     &kp LC(X)     &kp LC(C)     &kp LC(V)     &kp PTOYS_RUN   &none         &kp TERM      &kp PRV_TERM  &kp NXT_TERM  &kp NEW_TERM  &none
+          &none         &none         &none         &kp OPSWD_WIN &kp OPSWD_BRW &none           &none         &kp F23       &kp F24       &none         &none         &none
+                                                    &none         &trans        &none           &none         &none         &none
       >;
     };
 
     misc2_layer {
       label = "MISC 2";
       bindings = <
+      // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
+      // ├             ┼             ┼             ┼             ┼             ┼             ┤ ├             ┼             ┼             ┼             ┼             ┼             ┤
+      // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+      // ├             ┼             ┼             ┼             ┼             ┼             ┤ ├ Play/Pause  ┼ Media Prev  ┼  Vol Down   ┼   Vol Up    ┼ Media Next  ┼    Mute     ┤
+      // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+      // ├             ┼             ┼             ┼             ┼             ┼             ┤ ├             ┼             ┼             ┼             ┼             ┼             ┤
+      // ╰───────────────────────────┴─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┴───────────────────────────╯
+      //                                           ├             ┼             ┼             ┤ ├             ┼ // HELD //  ┼             ┤
+      //                                           ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
+          &none         &none         &none         &none         &none         &none           &none         &none         &none         &none         &none         &none
+          &none         &none         &none         &none         &none         &none           &kp C_PP      &kp C_PREV    &kp C_VOL_DN  &kp C_VOL_UP  &kp C_NEXT    &kp C_MUTE
+          &none         &none         &none         &none         &none         &none           &none         &none         &none         &none         &none         &none
+                                                    &none         &none         &none           &none         &trans        &none
+      >;
+    };
+
+    function_layer {
+      label = "FUNC";
+      bindings = <
+      // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
+      // ├ System Layer┼     F1      ┼     F2      ┼     F3      ┼     F4      ┼  Pause/Brk  ┤ ├   INSERT    ┼     F13     ┼     F14     ┼     F15     ┼     F16     ┼             ┤
+      // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+      // ├  CAPS LOCK  ┼  LCTRL / F5 ┼  LGUI / F6  ┼  LALT / F7  ┼ LSHFT / F8  ┼ PrintScreen ┤ ├             ┼ LCTRL / F17 ┼  LGUI / F18 ┼  LALT / F19 ┼ LSHFT / F20 ┼             ┤
+      // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+      // ├ Discord PTT ┼     F9      ┼     F10     ┼     F11     ┼     F12     ┼ Scroll Lock ┤ ├             ┼     F21     ┼     F22     ┼     F23     ┼     F24     ┼             ┤
+      // ╰───────────────────────────┴─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┴───────────────────────────╯
+      //                                           ├ // HELD //  ┼             ┼             ┤ ├    BKSP     ┼     DEL     ┼             ┤
+      //                                           ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
+          &sl SYSTEM    &kp F1        &kp F2        &kp F3        &kp F4        &kp PS_BRK      &kp INSERT    &kp F13       &kp F14       &kp F15       &kp F16       &none
+          &kp CAPS      &hmsl LSHFT F5 &hml LALT F6 &hml LGUI F7  &hml LCTRL F8 &kp PSCRN       &none         &hmr LCTRL F17 &hmr LGUI F18 &hmr LALT F19 &hmsr LSHFT F20 &none
+          &kp CA_LSFT   &kp F9        &kp F10       &kp F11       &kp F12       &kp SLCK        &none         &kp F21       &kp F22       &kp F23       &kp F24       &none
+                                                    &trans        &none         &none           &kp BSPC      &kp DEL       &none
+      >;
+    };
+
+    system_layer {
+      label = "SYSTEM";
+      bindings = <
       // NOTE: &sys_reset and &bootloader need to be directly bound to a key for locality (correct half affected) to work, see https://github.com/zmkfirmware/zmk/issues/1494
       // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
       // ├    Reset    ┼ Bootloader  ┼             ┼             ┼             ┼ Out Toggle  ┤ ├             ┼             ┼             ┼             ┼ Bootloader  ┼    Reset    ┤
       // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-      // ├             ┼             ┼ PwrToys Run ┼  1Pswd Win  ┼  1Pswd Brw  ┼             ┤ ├             ┼             ┼             ┼             ┼             ┼             ┤
+      // ├             ┼ BT prof 1   ┼ BT prof 2   ┼ BT prof 3   ┼ BT prof 4   ┼ BT prof 5   ┤ ├             ┼             ┼             ┼             ┼             ┼             ┤
       // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-      // ├ Clr BT prof ┼ BT prof 1   ┼ BT prof 2   ┼ BT prof 3   ┼ BT prof 4   ┼ BT prof 5   ┤ ├             ┼             ┼             ┼             ┼             ┼             ┤
+      // ├ Clr BT prof ┼             ┼             ┼             ┼             ┼             ┤ ├             ┼             ┼             ┼             ┼             ┼             ┤
       // ╰───────────────────────────┴─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┴───────────────────────────╯
-      //                                           ├ // HELD //  ┼             ┼             ┤ ├             ┼             ┼             ┤
+      //                                           ├             ┼             ┼             ┤ ├             ┼             ┼             ┤
       //                                           ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
           &sys_reset    &bootloader   &none         &none         &none         &out OUT_TOG    &none         &none         &none         &none         &bootloader   &sys_reset
-          &none         &none         &kp PTOYS_RUN &kp OPSWD_WIN &kp OPSWD_BRW &none           &none         &none         &none         &none         &none         &none
-          &bt BT_CLR    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &none         &none         &none         &none         &none         &none
-                                                    &trans        &none         &none           &none         &none         &none
+          &none         &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &none         &none         &none         &none         &none         &none
+          &bt BT_CLR    &none         &none         &none         &none         &none           &none         &none         &none         &none         &none         &none
+                                                    &none         &none         &none           &none         &none         &none
       >;
     };
 
