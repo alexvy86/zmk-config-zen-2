@@ -33,7 +33,7 @@
 #define GIT_GRAPH LC(LA(LG(LS(G))))
 #define FOLD_UP   LC(LA(LG(LS(U))))
 #define FILE_HIST LC(LA(LG(LS(H))))
-#define GH_PERMA  LC(LA(LG(LS(P))))
+#define GH_PERMA  LC(LA(LG(LS(M))))
 #define TERM      LC(GRAVE)
 #define NEW_TERM  LC(LS(GRAVE))
 #define PRV_TERM  LC(PG_UP)
