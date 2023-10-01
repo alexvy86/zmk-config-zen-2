@@ -31,7 +31,7 @@
 
 // Application shortcuts
 #define GIT_GRAPH LC(LA(LG(LS(G))))
-#define FOLDER_UP LC(LA(LG(LS(U))))
+#define FOLD_UP   LC(LA(LG(LS(U))))
 #define TERM      LC(GRAVE)
 #define NEW_TERM  LC(LS(GRAVE))
 #define PRV_TERM  LC(PG_UP)
@@ -261,7 +261,7 @@
       label = "MISC 1";
       bindings = <
       // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-      // ├             ┼             ┼             ┼             ┼             ┼             ┤ ├             ┼ Folder Up   ┼ Win Explorer┼             ┼             ┼             ┤
+      // ├             ┼             ┼             ┼             ┼             ┼             ┤ ├             ┼ Next Fold Up┼ Win Explorer┼             ┼             ┼             ┤
       // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
       // ├             ┼             ┼             ┼             ┼             ┼             ┤ ├ Git Graph   ┼  Terminal   ┼ Prev Term   ┼ Next Term   ┼ New Term    ┼             ┤
       // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
@@ -269,7 +269,7 @@
       // ╰───────────────────────────┴─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┴───────────────────────────╯
       //                                           ├             ┼             ┼             ┤ ├             ┼ // HELD //  ┼             ┤
       //                                           ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
-          &none         &none         &none         &none         &none         &none           &none         &kp FOLDER_UP &kp LG(E)     &none         &none         &none
+          &none         &none         &none         &none         &none         &none           &none         &kp FOLD_UP   &kp LG(E)     &none         &none         &none
           &none         &none         &none         &none         &none         &none           &kp GIT_GRAPH &kp TERM      &kp PRV_TERM  &kp NXT_TERM  &kp NEW_TERM  &none
           &none         &none         &none         &none         &none         &none           &none         &none         &none         &none         &none         &none
                                                     &none         &none         &none           &none         &trans        &none
