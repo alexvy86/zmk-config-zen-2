@@ -1,3 +1,6 @@
+# NOTES: using urob's fork for:
+# - Andrzej's change for hold-on-release to work with tap-preferred hold-taps.
+# - Cem Aksoylar's display and battery tweaks.
 manifest:
   remotes:
     - name: urob

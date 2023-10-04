@@ -61,7 +61,7 @@
 
 // Configuration for home-row mods
 #define QUICK_TAP_MS 100
-#define GLOBAL_QUICK_TAP_MS 100
+#define REQUIRE_PRIOR_IDLE_MS 100
 #define TAP_TERM_MS 200
 / {
   behaviors {
@@ -74,8 +74,8 @@
       bindings = <&kp>, <&kp>;
       tapping-term-ms = <TAP_TERM_MS>;
       quick-tap-ms = <QUICK_TAP_MS>;
-      global-quick-tap-ms = <GLOBAL_QUICK_TAP_MS>; // requires PR #1387, currently obtained by using urob's fork of zmk
-      hold-trigger-on-release;                     // requires PR #1423, currently obtained by using urob's fork of zmk
+      require-prior-idle-ms = <REQUIRE_PRIOR_IDLE_MS>;
+      hold-trigger-on-release;
       hold-trigger-key-positions = <KEYS_R THUMBS>;
     };
 
@@ -88,7 +88,7 @@
       bindings = <&kp>, <&kp>;
       tapping-term-ms = <TAP_TERM_MS>;
       quick-tap-ms = <QUICK_TAP_MS>;
-      hold-trigger-on-release;                     // requires PR #1423, currently obtained by using urob's fork of zmk
+      hold-trigger-on-release;
       hold-trigger-key-positions = <KEYS_R THUMBS>;
     };
 
@@ -101,8 +101,8 @@
       bindings = <&kp>, <&kp>;
       tapping-term-ms = <TAP_TERM_MS>;
       quick-tap-ms = <QUICK_TAP_MS>;
-      global-quick-tap-ms = <GLOBAL_QUICK_TAP_MS>; // requires PR #1387, currently obtained by using urob's fork of zmk
-      hold-trigger-on-release;                     // requires PR #1423, currently obtained by using urob's fork of zmk
+      require-prior-idle-ms = <REQUIRE_PRIOR_IDLE_MS>;
+      hold-trigger-on-release;
       hold-trigger-key-positions = <KEYS_L THUMBS>;
     };
 
@@ -115,7 +115,7 @@
       bindings = <&kp>, <&kp>;
       tapping-term-ms = <TAP_TERM_MS>;
       quick-tap-ms = <QUICK_TAP_MS>;
-      hold-trigger-on-release;                     // requires PR #1423, currently obtained by using urob's fork of zmk
+      hold-trigger-on-release;
       hold-trigger-key-positions = <KEYS_L THUMBS>;
     };
 
@@ -144,7 +144,7 @@
       bindings = <&mo>, <&td_shft>;
       tapping-term-ms = <TAP_TERM_MS>;
       quick-tap-ms = <QUICK_TAP_MS>;
-      // global-quick-tap-ms = <-1>; // requires PR #1387, currently obtained by using urob's fork of zmk
+      // require-prior-idle-ms = <-1>;
     };
   };
 };
