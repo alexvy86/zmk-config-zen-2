@@ -228,15 +228,15 @@
       // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
       // ├  Alt + F4   ┼ WIN PRV MON ┼ SNP WIN LFT ┼ SNP WIN RGT ┼ WIN NXT MON ┼             ┤ ├             ┼             ┼   PAGE UP   ┼  PAGE DOWN  ┼             ┼             ┤
       // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-      // ├             ┼    LSHFT    ┼     LALT    ┼     LGUI    ┼    LCTRL    ┼ CONTEXT MENU┤ ├     HOME    ┼    LEFT     ┼     UP      ┼     DOWN    ┼    RIGHT    ┼     END     ┤
+      // ├ Win Explorer┼    LSHFT    ┼     LALT    ┼     LGUI    ┼    LCTRL    ┼ PwrToys Run ┤ ├     HOME    ┼    LEFT     ┼     UP      ┼     DOWN    ┼    RIGHT    ┼     END     ┤
       // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-      // ├             ┼ PRV VIR DSK ┼ NXT VIR DSK ┼  PREV TAB   ┼  NEXT TAB   ┼ CTRL ALT TAB┤ ├     SPC     ┼             ┼             ┼             ┼             ┼             ┤
+      // ├ CONTEXT MENU┼ PRV VIR DSK ┼ NXT VIR DSK ┼  PREV TAB   ┼  NEXT TAB   ┼ CTRL ALT TAB┤ ├     SPC     ┼             ┼             ┼             ┼             ┼             ┤
       // ╰───────────────────────────┴─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┴───────────────────────────╯
       //                                           ├             ┼             ┼ // HELD //  ┤ ├     BKSP    ┼     DEL     ┼             ┤
       //                                           ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
           &kp LA(F4)    &kp GS_LFT    &kp G_LFT     &kp G_RGT     &kp GS_RGT    &none           &none         &none         &kp PG_UP      &kp PG_DN    &none         &none
-          &none         &kp LSHFT     &kp LALT      &kp LGUI      &kp LCTRL     &kp K_APP       &kp HOME      &kp LEFT      &kp UP         &kp DOWN     &kp RIGHT     &kp END
-          &none         &kp PRV_VD    &kp NXT_VD    &kp PRV_TAB   &kp NXT_TAB   &kp CA_TAB      &kp SPACE     &none         &none          &none        &none         &none
+          &kp LG(E)     &kp LSHFT     &kp LALT      &kp LGUI      &kp LCTRL     &kp PTOYS_RUN   &kp HOME      &kp LEFT      &kp UP         &kp DOWN     &kp RIGHT     &kp END
+          &kp K_APP     &kp PRV_VD    &kp NXT_VD    &kp PRV_TAB   &kp NXT_TAB   &kp CA_TAB      &kp SPACE     &none         &none          &none        &none         &none
                                                     &none         &none         &trans          &kp BSPC      &kp DEL       &none
       >;
     };
@@ -247,15 +247,15 @@
       // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
       // ├             ┼ Next Fold Up┼  File Hist  ┼ GH Permalink┼  Git Graph  ┼             ┤ ├             ┼             ┼             ┼             ┼             ┼             ┤
       // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-      // ├ Win Explorer┼    Undo     ┼     Cut     ┼    Copy     ┼    Paste    ┼ PwrToys Run ┤ ├             ┼  Terminal   ┼ Prev Term   ┼ Next Term   ┼ New Term    ┼             ┤
+      // ├  1Pswd Win  ┼    Undo     ┼     Cut     ┼    Copy     ┼    Paste    ┼  1Pswd Brw  ┤ ├             ┼             ┼             ┼             ┼             ┼             ┤
       // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-      // ├             ┼             ┼             ┼  1Pswd Win  ┼  1Pswd Brw  ┼             ┤ ├             ┼ Trm Height+ ┼ Trm Height- ┼             ┼             ┼             ┤
+      // ├ Trm Height+ ┼ Trm Height- ┼  Prev Term  ┼  Next Term  ┼  Terminal   ┼  New Term   ┤ ├             ┼             ┼             ┼             ┼             ┼             ┤
       // ╰───────────────────────────┴─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┴───────────────────────────╯
       //                                           ├             ┼ // HELD //  ┼             ┤ ├             ┼             ┼             ┤
       //                                           ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
           &none         &kp FOLD_UP   &kp FILE_HIST &kp GH_PERMA  &kp GIT_GRAPH &none           &none         &none         &none         &none         &none         &none
-          &kp LG(E)     &kp LC(Z)     &kp LC(X)     &kp LC(C)     &kp LC(V)     &kp PTOYS_RUN   &none         &kp TERM      &kp PRV_TERM  &kp NXT_TERM  &kp NEW_TERM  &none
-          &none         &none         &none         &kp OPSWD_WIN &kp OPSWD_BRW &none           &none         &kp F23       &kp F24       &none         &none         &none
+          &kp OPSWD_WIN &kp LC(Z)     &kp LC(X)     &kp LC(C)     &kp LC(V)     &kp OPSWD_BRW   &none         &none         &none         &none         &none         &none
+          &kp F23       &kp F24       &kp PRV_TERM  &kp NXT_TERM  &kp TERM      &kp NEW_TERM    &none         &none         &none         &none         &none         &none
                                                     &none         &trans        &none           &none         &none         &none
       >;
     };
