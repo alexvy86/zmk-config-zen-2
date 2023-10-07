@@ -168,6 +168,7 @@
         compatible = "zmk,combos";
         combo_enter {
             timeout-ms = <50>;
+            require-prior-idle-ms = <REQUIRE_PRIOR_IDLE_MS>;
             key-positions = <RM2 RM3>;
             bindings = <&kp ENTER>;
         };
