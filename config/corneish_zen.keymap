@@ -198,7 +198,7 @@
       //                                           ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
           &none         &kp SQT       &kp COMMA     &kp DOT       &kp P         &kp Y           &kp F         &kp G         &kp C         &kp R         &kp L         &none
           &none         &hmsl LSHFT A &hml LALT O   &hml LGUI E   &hml LCTRL U  &kp I           &kp D         &hmr LCTRL H  &hmr LGUI T   &hmr LALT N   &hmsr LSHFT S &none
-          &none         &kp SEMI      &hml RALT Q   &kp J         &kp K         &kp X           &kp B         &kp M         &kp W         &hmr RALT V   &kp Z         &kp ENTER
+          &none         &kp SEMI      &hml RALT Q   &kp J         &kp K         &kp X           &kp B         &kp M         &kp W         &hmr RALT V   &kp Z         &none
                                                     THUMB1        THUMB2        THUMB3          THUMB4        THUMB5        THUMB6
       >;
     };
