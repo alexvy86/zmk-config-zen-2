@@ -163,25 +163,13 @@
 
 // ¯\_(ツ)_/¯
 
-/ {
-    combos {
-        compatible = "zmk,combos";
-        combo_enter {
-            timeout-ms = <50>;
-            require-prior-idle-ms = <REQUIRE_PRIOR_IDLE_MS>;
-            key-positions = <RM2 RM3>;
-            bindings = <&kp ENTER>;
-        };
-    };
-};
-
 // Thumb keys for base layer
 #define THUMB1 &lt LY_FN ESC
 #define THUMB2 &lt LY_MIS1 TAB
 #define THUMB3 &lt LY_NAV SPACE
 #define THUMB4 &lt_customshift LY_NUM 0
 #define THUMB5 &lt LY_MIS2 BSPC
-#define THUMB6 &td_layers
+#define THUMB6 &kp ENTER
 
 / {
   keymap {
@@ -206,7 +194,7 @@
       // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
       // ├             ┼      ;      ┼  RALT / Q   ┼      J      ┼      K      ┼      X      ┤ ├      B      ┼      M      ┼      W      ┼  RALT / V   ┼      Z      ┼             ┤
       // ╰───────────────────────────┴─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┴───────────────────────────╯
-      //                                           ├ ESC / LY_FN ┼ TAB / LY_MS1┼ SPC / LY_NAV┤ ├ SS / LY_NUM ┼BKSP / LY_MS2┼ TO GAMES LY ┤
+      //                                           ├ ESC / LY_FN ┼ TAB / LY_MS1┼ SPC / LY_NAV┤ ├ SS / LY_NUM ┼BKSP / LY_MS2┼    ENTER    ┤
       //                                           ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
           &none         &kp SQT       &kp COMMA     &kp DOT       &kp P         &kp Y           &kp F         &kp G         &kp C         &kp R         &kp L         &none
           &none         &hmsl LSHFT A &hml LALT O   &hml LGUI E   &hml LCTRL U  &kp I           &kp D         &hmr LCTRL H  &hmr LGUI T   &hmr LALT N   &hmsr LSHFT S &none
@@ -223,14 +211,14 @@
       // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
       // ├             ┼  LSHFT / 1  ┼  LALT / 2   ┼  LGUI / 3   ┼  LCTRL / 4  ┼      5      ┤ ├      6      ┼  LCTRL / 7  ┼  LGUI / 8   ┼  LALT / 9   ┼  LSHFT / 0  ┼             ┤
       // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-      // ├             ┼      \      ┼      /      ┼             ┼      [      ┼      .      ┤ ├      `      ┼      ]      ┼      =      ┼      +      ┼      -      ┼             ┤
+      // ├             ┼             ┼      `      ┼      [      ┼      ]      ┼      .      ┤ ├      \      ┼      /      ┼      =      ┼      +      ┼      -      ┼             ┤
       // ╰───────────────────────────┴─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┴───────────────────────────╯
       //                                           ├     ESC     ┼     TAB     ┼    SPACE    ┤ ├ // HELD //  ┼             ┼             ┤
       //                                           ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
-          &none         &kp EXCL       &kp AT         &kp HASH     &kp DOLLAR    &kp PERCENT    &kp CARET     &kp AMPS      &kp ASTRK     &kp LPAR      &kp RPAR       &none
-          &none         &hmsl LSHFT N1 &hml LALT N2   &hml LGUI N3 &hml LCTRL N4 &kp N5         &kp N6        &hmr LCTRL N7 &hmr LGUI N8  &hmr LALT N9  &hmsr LSHFT N0 &none
-          &none         &kp BSLH       &kp FSLH       &none        &kp LBKT      &kp DOT        &kp GRAVE     &kp RBKT      &kp EQUAL     &kp PLUS      &kp MINUS      &none
-                                                      &kp ESC      &kp TAB       &kp SPACE      &trans        &none         &none
+          &none         &kp EXCL       &kp AT       &kp HASH      &kp DOLLAR    &kp PERCENT     &kp CARET     &kp AMPS      &kp ASTRK     &kp LPAR      &kp RPAR       &none
+          &none         &hmsl LSHFT N1 &hml LALT N2 &hml LGUI N3  &hml LCTRL N4 &kp N5          &kp N6        &hmr LCTRL N7 &hmr LGUI N8  &hmr LALT N9  &hmsr LSHFT N0 &none
+          &none         &none          &kp GRAVE    &kp LBKT      &kp RBKT      &kp DOT         &kp BSLH      &kp FSLH      &kp EQUAL     &kp PLUS      &kp MINUS      &none
+                                                    &kp ESC       &kp TAB       &kp SPACE       &trans        &none         &none
       >;
     };
 
