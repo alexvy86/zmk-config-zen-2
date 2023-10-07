@@ -223,13 +223,13 @@
       // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
       // ├             ┼  LSHFT / 1  ┼  LALT / 2   ┼  LGUI / 3   ┼  LCTRL / 4  ┼      5      ┤ ├      6      ┼  LCTRL / 7  ┼  LGUI / 8   ┼  LALT / 9   ┼  LSHFT / 0  ┼             ┤
       // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-      // ├             ┼      \      ┼      /      ┼      [      ┼      {      ┼      .      ┤ ├      `      ┼      }      ┼      ]      ┼      =      ┼      -      ┼             ┤
+      // ├             ┼      \      ┼      /      ┼             ┼      [      ┼      .      ┤ ├      `      ┼      ]      ┼      =      ┼      +      ┼      -      ┼             ┤
       // ╰───────────────────────────┴─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┴───────────────────────────╯
       //                                           ├     ESC     ┼     TAB     ┼    SPACE    ┤ ├ // HELD //  ┼             ┼             ┤
       //                                           ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
           &none         &kp EXCL       &kp AT         &kp HASH     &kp DOLLAR    &kp PERCENT    &kp CARET     &kp AMPS      &kp ASTRK     &kp LPAR      &kp RPAR       &none
           &none         &hmsl LSHFT N1 &hml LALT N2   &hml LGUI N3 &hml LCTRL N4 &kp N5         &kp N6        &hmr LCTRL N7 &hmr LGUI N8  &hmr LALT N9  &hmsr LSHFT N0 &none
-          &none         &kp BSLH       &kp FSLH       &kp LBKT     &kp LBRC      &kp DOT        &kp GRAVE     &kp RBRC      &kp RBKT      &kp EQUAL     &kp MINUS      &none
+          &none         &kp BSLH       &kp FSLH       &none        &kp LBKT      &kp DOT        &kp GRAVE     &kp RBKT      &kp EQUAL     &kp PLUS      &kp MINUS      &none
                                                       &kp ESC      &kp TAB       &kp SPACE      &trans        &none         &none
       >;
     };
