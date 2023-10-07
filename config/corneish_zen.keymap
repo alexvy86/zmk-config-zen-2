@@ -163,6 +163,17 @@
 
 // ¯\_(ツ)_/¯
 
+/ {
+    combos {
+        compatible = "zmk,combos";
+        combo_enter {
+            timeout-ms = <50>;
+            key-positions = <RM3 RM4>;
+            bindings = <&kp ESC>;
+        };
+    };
+};
+
 // Thumb keys for base layer
 #define THUMB1 &lt LY_FN ESC
 #define THUMB2 &lt LY_MIS1 TAB
@@ -188,17 +199,17 @@
       label = "DVORAK";
       bindings = <
       // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-      // ├      \      ┼      '      ┼      ,      ┼      .      ┼      P      ┼      Y      ┤ ├      F      ┼      G      ┼      C      ┼      R      ┼      L      ┼      /      ┤
+      // ├             ┼      '      ┼      ,      ┼      .      ┼      P      ┼      Y      ┤ ├      F      ┼      G      ┼      C      ┼      R      ┼      L      ┼             ┤
       // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-      // ├      `      ┼  LSHFT / A  ┼  LALT / O   ┼  LGUI / E   ┼  LCTRL / U  ┼      I      ┤ ├      D      ┼  LCTRL / H  ┼  LGUI / T   ┼  LALT / N   ┼  LSHFT / S  ┼      -      ┤
+      // ├             ┼  LSHFT / A  ┼  LALT / O   ┼  LGUI / E   ┼  LCTRL / U  ┼      I      ┤ ├      D      ┼  LCTRL / H  ┼  LGUI / T   ┼  LALT / N   ┼  LSHFT / S  ┼             ┤
       // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-      // ├ Custom Shft ┼      ;      ┼  RALT / Q   ┼      J      ┼      K      ┼      X      ┤ ├      B      ┼      M      ┼      W      ┼  RALT / V   ┼      Z      ┼    ENTER    ┤
+      // ├             ┼      ;      ┼  RALT / Q   ┼      J      ┼      K      ┼      X      ┤ ├      B      ┼      M      ┼      W      ┼  RALT / V   ┼      Z      ┼             ┤
       // ╰───────────────────────────┴─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┴───────────────────────────╯
       //                                           ├ ESC / LY_FN ┼ TAB / LY_MS1┼ SPC / LY_NAV┤ ├ SS / LY_NUM ┼BKSP / LY_MS2┼ TO GAMES LY ┤
       //                                           ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
-          &kp BSLH      &kp SQT       &kp COMMA     &kp DOT       &kp P         &kp Y           &kp F         &kp G         &kp C         &kp R         &kp L         &kp FSLH
-          &kp GRAVE     &hmsl LSHFT A &hml LALT O   &hml LGUI E   &hml LCTRL U  &kp I           &kp D         &hmr LCTRL H  &hmr LGUI T   &hmr LALT N   &hmsr LSHFT S &kp MINUS
-          &td_shft      &kp SEMI      &hml RALT Q   &kp J         &kp K         &kp X           &kp B         &kp M         &kp W         &hmr RALT V   &kp Z         &kp RET
+          &none         &kp SQT       &kp COMMA     &kp DOT       &kp P         &kp Y           &kp F         &kp G         &kp C         &kp R         &kp L         &none
+          &none         &hmsl LSHFT A &hml LALT O   &hml LGUI E   &hml LCTRL U  &kp I           &kp D         &hmr LCTRL H  &hmr LGUI T   &hmr LALT N   &hmsr LSHFT S &none
+          &none         &kp SEMI      &hml RALT Q   &kp J         &kp K         &kp X           &kp B         &kp M         &kp W         &hmr RALT V   &kp Z         &none
                                                     THUMB1        THUMB2        THUMB3          THUMB4        THUMB5        THUMB6
       >;
     };
@@ -207,18 +218,18 @@
       label = "NUMBER";
       bindings = <
       // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-      // ├      \      ┼      !      ┼      @      ┼      #      ┼      $      ┼      %      ┤ ├      ^      ┼      &      ┼      *      ┼      (      ┼      )      ┼      /      ┤
+      // ├             ┼      !      ┼      @      ┼      #      ┼      $      ┼      %      ┤ ├      ^      ┼      &      ┼      *      ┼      (      ┼      )      ┼             ┤
       // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-      // ├      `      ┼  LSHFT / 1  ┼  LALT / 2   ┼  LGUI / 3   ┼  LCTRL / 4  ┼      5      ┤ ├      6      ┼  LCTRL / 7  ┼  LGUI / 8   ┼  LALT / 9   ┼  LSHFT / 0  ┼      -      ┤
+      // ├             ┼  LSHFT / 1  ┼  LALT / 2   ┼  LGUI / 3   ┼  LCTRL / 4  ┼      5      ┤ ├      6      ┼  LCTRL / 7  ┼  LGUI / 8   ┼  LALT / 9   ┼  LSHFT / 0  ┼             ┤
       // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-      // ├             ┼             ┼    RALT     ┼      [      ┼      {      ┼      .      ┤ ├      =      ┼      }      ┼      ]      ┼      +      ┼      -      ┼    ENTER    ┤
+      // ├             ┼      \      ┼      /      ┼      [      ┼      {      ┼      .      ┤ ├      `      ┼      }      ┼      ]      ┼      =      ┼      -      ┼             ┤
       // ╰───────────────────────────┴─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┴───────────────────────────╯
       //                                           ├     ESC     ┼     TAB     ┼    SPACE    ┤ ├ // HELD //  ┼             ┼             ┤
       //                                           ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
-          &kp BSLH      &kp EXCL       &kp AT         &kp HASH     &kp DOLLAR    &kp PERCENT     &kp CARET     &kp AMPS      &kp ASTRK     &kp LPAR       &kp RPAR       &kp FSLH
-          &kp GRAVE     &hmsl LSHFT N1 &hml LALT N2   &hml LGUI N3 &hml LCTRL N4 &kp N5          &kp N6        &hmr LCTRL N7 &hmr LGUI N8  &hmr LALT N9   &hmsr LSHFT N0 &kp MINUS
-          &none         &none          &kp RALT       &kp LBKT     &kp LBRC      &kp DOT         &kp EQUAL     &kp RBRC      &kp RBKT      &kp PLUS       &kp MINUS      &kp RET
-                                                      &kp ESC      &kp TAB       &kp SPACE       &trans        &none         &none
+          &none         &kp EXCL       &kp AT         &kp HASH     &kp DOLLAR    &kp PERCENT    &kp CARET     &kp AMPS      &kp ASTRK     &kp LPAR      &kp RPAR       &none
+          &none         &hmsl LSHFT N1 &hml LALT N2   &hml LGUI N3 &hml LCTRL N4 &kp N5         &kp N6        &hmr LCTRL N7 &hmr LGUI N8  &hmr LALT N9  &hmsr LSHFT N0 &none
+          &none         &kp BSLH       &kp FSLH       &kp LBKT     &kp LBRC      &kp DOT        &kp GRAVE     &kp RBRC      &kp RBKT      &kp EQUAL     &kp MINUS      &none
+                                                      &kp ESC      &kp TAB       &kp SPACE      &trans        &none         &none
       >;
     };
 
@@ -226,17 +237,17 @@
       label = "NAV";
       bindings = <
       // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-      // ├  Alt + F4   ┼ WIN PRV MON ┼ SNP WIN LFT ┼ SNP WIN RGT ┼ WIN NXT MON ┼             ┤ ├             ┼             ┼   PAGE UP   ┼  PAGE DOWN  ┼             ┼             ┤
+      // ├             ┼ WIN PRV MON ┼ SNP WIN LFT ┼ SNP WIN RGT ┼ WIN NXT MON ┼  Alt + F4   ┤ ├             ┼    HOME     ┼   PAGE UP   ┼  PAGE DOWN  ┼     END     ┼             ┤
       // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-      // ├ Win Explorer┼    LSHFT    ┼     LALT    ┼     LGUI    ┼    LCTRL    ┼ PwrToys Run ┤ ├     HOME    ┼    LEFT     ┼     UP      ┼     DOWN    ┼    RIGHT    ┼     END     ┤
+      // ├             ┼    LSHFT    ┼     LALT    ┼     LGUI    ┼    LCTRL    ┼ PwrToys Run ┤ ├             ┼    LEFT     ┼     UP      ┼     DOWN    ┼    RIGHT    ┼             ┤
       // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-      // ├ CONTEXT MENU┼ PRV VIR DSK ┼ NXT VIR DSK ┼  PREV TAB   ┼  NEXT TAB   ┼ CTRL ALT TAB┤ ├     SPC     ┼             ┼             ┼             ┼             ┼             ┤
+      // ├             ┼ Win Explorer┼             ┼  PREV TAB   ┼  NEXT TAB   ┼ CTRL ALT TAB┤ ├     SPC     ┼ CONTEXT MENU┼             ┼ PRV VIR DSK ┼ NXT VIR DSK ┼             ┤
       // ╰───────────────────────────┴─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┴───────────────────────────╯
       //                                           ├             ┼             ┼ // HELD //  ┤ ├     BKSP    ┼     DEL     ┼             ┤
       //                                           ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
-          &kp LA(F4)    &kp GS_LFT    &kp G_LFT     &kp G_RGT     &kp GS_RGT    &none           &none         &none         &kp PG_UP      &kp PG_DN    &none         &none
-          &kp LG(E)     &kp LSHFT     &kp LALT      &kp LGUI      &kp LCTRL     &kp PTOYS_RUN   &kp HOME      &kp LEFT      &kp UP         &kp DOWN     &kp RIGHT     &kp END
-          &kp K_APP     &kp PRV_VD    &kp NXT_VD    &kp PRV_TAB   &kp NXT_TAB   &kp CA_TAB      &kp SPACE     &none         &none          &none        &none         &none
+          &none         &kp GS_LFT    &kp G_LFT     &kp G_RGT     &kp GS_RGT    &kp LA(F4)      &none         &kp HOME      &kp PG_UP      &kp PG_DN    &kp END       &none
+          &none         &kp LSHFT     &kp LALT      &kp LGUI      &kp LCTRL     &kp PTOYS_RUN   &none         &kp LEFT      &kp UP         &kp DOWN     &kp RIGHT     &none
+          &none         &kp LG(E)     &none         &kp PRV_TAB   &kp NXT_TAB   &kp CA_TAB      &kp SPACE     &kp K_APP     &none          &kp PRV_VD   &kp NXT_VD    &none
                                                     &none         &none         &trans          &kp BSPC      &kp DEL       &none
       >;
     };
@@ -245,17 +256,17 @@
       label = "MISC 1";
       bindings = <
       // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-      // ├             ┼ Next Fold Up┼  File Hist  ┼ GH Permalink┼  Git Graph  ┼             ┤ ├             ┼             ┼             ┼             ┼             ┼             ┤
+      // ├             ┼ Next Fold Up┼  File Hist  ┼ GH Permalink┼  Git Graph  ┼  1Pswd Win  ┤ ├             ┼             ┼             ┼             ┼             ┼             ┤
       // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-      // ├  1Pswd Win  ┼    Undo     ┼     Cut     ┼    Copy     ┼    Paste    ┼  1Pswd Brw  ┤ ├             ┼             ┼             ┼             ┼             ┼             ┤
+      // ├             ┼    Undo     ┼     Cut     ┼    Copy     ┼    Paste    ┼  1Pswd Brw  ┤ ├             ┼ Trm Height+ ┼ Trm Height- ┼             ┼             ┼             ┤
       // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-      // ├ Trm Height+ ┼ Trm Height- ┼  Prev Term  ┼  Next Term  ┼  Terminal   ┼  New Term   ┤ ├             ┼             ┼             ┼             ┼             ┼             ┤
+      // ├             ┼  Terminal   ┼  Prev Term  ┼  Next Term  ┼  New Term   ┼             ┤ ├             ┼             ┼             ┼             ┼             ┼             ┤
       // ╰───────────────────────────┴─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┴───────────────────────────╯
       //                                           ├             ┼ // HELD //  ┼             ┤ ├             ┼             ┼             ┤
       //                                           ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
-          &none         &kp FOLD_UP   &kp FILE_HIST &kp GH_PERMA  &kp GIT_GRAPH &none           &none         &none         &none         &none         &none         &none
-          &kp OPSWD_WIN &kp LC(Z)     &kp LC(X)     &kp LC(C)     &kp LC(V)     &kp OPSWD_BRW   &none         &none         &none         &none         &none         &none
-          &kp F23       &kp F24       &kp PRV_TERM  &kp NXT_TERM  &kp TERM      &kp NEW_TERM    &none         &none         &none         &none         &none         &none
+          &none         &kp FOLD_UP   &kp FILE_HIST &kp GH_PERMA  &kp GIT_GRAPH &kp OPSWD_WIN   &none         &none         &none         &none         &none         &none
+          &none         &kp LC(Z)     &kp LC(X)     &kp LC(C)     &kp LC(V)     &kp OPSWD_BRW   &none         &kp F23       &kp F24       &none         &none         &none
+          &none         &kp TERM      &kp PRV_TERM  &kp NXT_TERM  &kp NEW_TERM  &none           &none         &none         &none         &none         &none         &none
                                                     &none         &trans        &none           &none         &none         &none
       >;
     };
@@ -266,15 +277,15 @@
       // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
       // ├             ┼             ┼             ┼             ┼             ┼             ┤ ├             ┼             ┼             ┼             ┼             ┼             ┤
       // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-      // ├             ┼             ┼             ┼             ┼             ┼             ┤ ├ Play/Pause  ┼ Media Prev  ┼  Vol Down   ┼   Vol Up    ┼ Media Next  ┼    Mute     ┤
+      // ├             ┼             ┼             ┼             ┼             ┼             ┤ ├ Play/Pause  ┼ Media Prev  ┼  Vol Down   ┼   Vol Up    ┼ Media Next  ┼             ┤
       // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-      // ├             ┼             ┼             ┼             ┼             ┼             ┤ ├             ┼             ┼             ┼             ┼             ┼             ┤
+      // ├             ┼             ┼             ┼             ┼             ┼             ┤ ├    Mute     ┼             ┼             ┼             ┼             ┼             ┤
       // ╰───────────────────────────┴─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┴───────────────────────────╯
       //                                           ├             ┼             ┼             ┤ ├             ┼ // HELD //  ┼             ┤
       //                                           ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
           &none         &none         &none         &none         &none         &none           &none         &none         &none         &none         &none         &none
-          &none         &none         &none         &none         &none         &none           &kp C_PP      &kp C_PREV    &kp C_VOL_DN  &kp C_VOL_UP  &kp C_NEXT    &kp C_MUTE
-          &none         &none         &none         &none         &none         &none           &none         &none         &none         &none         &none         &none
+          &none         &none         &none         &none         &none         &none           &kp C_PP      &kp C_PREV    &kp C_VOL_DN  &kp C_VOL_UP  &kp C_NEXT    &none
+          &none         &none         &none         &none         &none         &none           &kp C_MUTE    &none         &none         &none         &none         &none
                                                     &none         &none         &none           &none         &trans        &none
       >;
     };
@@ -283,18 +294,18 @@
       label = "FUNC";
       bindings = <
       // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-      // ├ System Layer┼     F1      ┼     F2      ┼     F3      ┼     F4      ┼  Pause/Brk  ┤ ├   INSERT    ┼     F13     ┼     F14     ┼     F15     ┼     F16     ┼             ┤
+      // ├             ┼     F1      ┼     F2      ┼     F3      ┼     F4      ┼  Pause/Brk  ┤ ├   INSERT    ┼     F13     ┼     F14     ┼     F15     ┼     F16     ┼             ┤
       // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-      // ├  CAPS LOCK  ┼  LCTRL / F5 ┼  LGUI / F6  ┼  LALT / F7  ┼ LSHFT / F8  ┼ PrintScreen ┤ ├             ┼ LCTRL / F17 ┼  LGUI / F18 ┼  LALT / F19 ┼ LSHFT / F20 ┼             ┤
+      // ├             ┼  LCTRL / F5 ┼  LGUI / F6  ┼  LALT / F7  ┼ LSHFT / F8  ┼ PrintScreen ┤ ├ Scroll Lock ┼ LCTRL / F17 ┼  LGUI / F18 ┼  LALT / F19 ┼ LSHFT / F20 ┼             ┤
       // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-      // ├ Discord PTT ┼     F9      ┼     F10     ┼     F11     ┼     F12     ┼ Scroll Lock ┤ ├             ┼     F21     ┼     F22     ┼     F23     ┼     F24     ┼             ┤
+      // ├             ┼     F9      ┼     F10     ┼     F11     ┼     F12     ┼  CAPS LOCK  ┤ ├             ┼     F21     ┼     F22     ┼     F23     ┼     F24     ┼             ┤
       // ╰───────────────────────────┴─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┴───────────────────────────╯
-      //                                           ├ // HELD //  ┼             ┼             ┤ ├             ┼             ┼             ┤
+      //                                           ├ // HELD //  ┼ System Layer┼ Discord PTT ┤ ├             ┼             ┼             ┤
       //                                           ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
-          &sl LY_SYS    &kp F1        &kp F2        &kp F3        &kp F4        &kp PS_BRK      &kp INSERT    &kp F13       &kp F14       &kp F15       &kp F16       &none
-          &kp CAPS      &hmsl LSHFT F5 &hml LALT F6 &hml LGUI F7  &hml LCTRL F8 &kp PSCRN       &none         &hmr LCTRL F17 &hmr LGUI F18 &hmr LALT F19 &hmsr LSHFT F20 &none
-          &kp CA_LSFT   &kp F9        &kp F10       &kp F11       &kp F12       &kp SLCK        &none         &kp F21       &kp F22       &kp F23       &kp F24       &none
-                                                    &trans        &none         &none           &none         &none         &none
+          &none         &kp F1        &kp F2        &kp F3        &kp F4        &kp PS_BRK      &kp INSERT    &kp F13       &kp F14       &kp F15       &kp F16       &none
+          &none         &hmsl LSHFT F5 &hml LALT F6 &hml LGUI F7  &hml LCTRL F8 &kp PSCRN       &kp SLCK      &hmr LCTRL F17 &hmr LGUI F18 &hmr LALT F19 &hmsr LSHFT F20 &none
+          &none         &kp F9        &kp F10       &kp F11       &kp F12       &kp CAPS        &none         &kp F21       &kp F22       &kp F23       &kp F24       &none
+                                                    &trans        &sl LY_SYS    &kp CA_LSFT     &none         &none         &none
       >;
     };
 
@@ -303,17 +314,17 @@
       bindings = <
       // NOTE: &sys_reset and &bootloader need to be directly bound to a key for locality (correct half affected) to work, see https://github.com/zmkfirmware/zmk/issues/1494
       // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-      // ├    Reset    ┼ Bootloader  ┼             ┼             ┼             ┼ Out Toggle  ┤ ├             ┼             ┼             ┼             ┼ Bootloader  ┼    Reset    ┤
+      // ├             ┼    Reset    ┼ Bootloader  ┼             ┼             ┼ Out Toggle  ┤ ├             ┼             ┼             ┼ Bootloader  ┼    Reset    ┼             ┤
       // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
       // ├             ┼ BT prof 1   ┼ BT prof 2   ┼ BT prof 3   ┼ BT prof 4   ┼ BT prof 5   ┤ ├             ┼             ┼             ┼             ┼             ┼             ┤
       // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-      // ├ Clr BT prof ┼             ┼             ┼             ┼             ┼             ┤ ├             ┼             ┼             ┼             ┼             ┼             ┤
+      // ├             ┼ Clr BT prof ┼             ┼             ┼             ┼             ┤ ├             ┼             ┼             ┼             ┼             ┼             ┤
       // ╰───────────────────────────┴─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┴───────────────────────────╯
       //                                           ├             ┼             ┼             ┤ ├             ┼             ┼             ┤
       //                                           ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
-          &sys_reset    &bootloader   &none         &none         &none         &out OUT_TOG    &none         &none         &none         &none         &bootloader   &sys_reset
+          &none         &sys_reset    &bootloader   &none         &none         &out OUT_TOG    &none         &none         &none         &bootloader   &sys_reset    &none
           &none         &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &none         &none         &none         &none         &none         &none
-          &bt BT_CLR    &none         &none         &none         &none         &none           &none         &none         &none         &none         &none         &none
+          &none         &bt BT_CLR    &none         &none         &none         &none           &none         &none         &none         &none         &none         &none
                                                     &none         &none         &none           &none         &none         &none
       >;
     };
