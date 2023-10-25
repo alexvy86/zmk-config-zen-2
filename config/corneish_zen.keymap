@@ -119,15 +119,6 @@
       hold-trigger-key-positions = <KEYS_L THUMBS>;
     };
 
-    // tap: sticky shift | double tap: capsword | triple tap: cancel capsword
-    td_shft: td_shft {
-      compatible = "zmk,behavior-tap-dance";
-      label = "TD_SHFT";
-      #binding-cells = <0>;
-      tapping-term-ms = <TAP_TERM_MS>;
-      bindings = <&sk LSHFT>, <&caps_word>, <&kp K_CANCEL>;
-    };
-
     td_layers: td_layers {
       compatible = "zmk,behavior-tap-dance";
       label = "TD_LAYERS";
@@ -136,15 +127,15 @@
       bindings = <&to LY_BASE>, <&to LY_GAM>;
     };
 
-    lt_customshift: lt_customshift {
-      label = "ZB_lt_customshift";
+    // Momentary layer or sticky key, for right thumb
+    mo_sk: mo_sk {
+      label = "ZB_mo_sk";
       compatible = "zmk,behavior-hold-tap";
       #binding-cells = <2>;
-      flavor = "balanced";
-      bindings = <&mo>, <&td_shft>;
+      flavor = "tap-preferred";
+      bindings = <&mo>, <&sk>;
       tapping-term-ms = <TAP_TERM_MS>;
-      quick-tap-ms = <QUICK_TAP_MS>;
-      // require-prior-idle-ms = <-1>;
+      quick-tap-ms = <-1>; // Don't want quick sequential taps to this to trigger a held sticky key
     };
   };
 };
@@ -167,9 +158,22 @@
 #define THUMB1 &lt LY_FN ESC
 #define THUMB2 &lt LY_MIS1 TAB
 #define THUMB3 &lt LY_NAV SPACE
-#define THUMB4 &lt_customshift LY_NUM 0
+#define THUMB4 &mo_sk LY_NUM LSHFT
 #define THUMB5 &lt LY_MIS2 BSPC
 #define THUMB6 &kp ENTER
+
+/ {
+    combos {
+        compatible = "zmk,combos";
+
+        // Caps word on main thumb keys
+        combo_caps_word {
+            timeout-ms = <50>;
+            key-positions = <LH0 RH0>;
+            bindings = <&caps_word>;
+        };
+    };
+};
 
 / {
   keymap {
