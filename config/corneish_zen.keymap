@@ -135,7 +135,6 @@
       flavor = "tap-preferred";
       bindings = <&mo>, <&sk>;
       tapping-term-ms = <TAP_TERM_MS>;
-      quick-tap-ms = <-1>; // Don't want quick sequential taps to this to trigger a held sticky key
     };
   };
 };
