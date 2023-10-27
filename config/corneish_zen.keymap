@@ -65,7 +65,7 @@
 #define TAP_TERM_MS 200
 / {
   behaviors {
-    // Non-shift homerow mod for left hand
+    // Homerow mod for left hand
     hml: hml {
       label = "ZB_hml";
       compatible = "zmk,behavior-hold-tap";
@@ -79,20 +79,7 @@
       hold-trigger-key-positions = <KEYS_R THUMBS>;
     };
 
-    // Shift homerow mod for left hand
-    hmsl: hmsl {
-      label = "ZB_hmsl";
-      compatible = "zmk,behavior-hold-tap";
-      #binding-cells = <2>;
-      flavor = "tap-preferred";
-      bindings = <&kp>, <&kp>;
-      tapping-term-ms = <TAP_TERM_MS>;
-      quick-tap-ms = <QUICK_TAP_MS>;
-      hold-trigger-on-release;
-      hold-trigger-key-positions = <KEYS_R THUMBS>;
-    };
-
-    // Non-shift homerow mod for right hand
+    // Homerow mod for right hand
     hmr: hmr {
       label = "ZB_hmr";
       compatible = "zmk,behavior-hold-tap";
@@ -102,19 +89,6 @@
       tapping-term-ms = <TAP_TERM_MS>;
       quick-tap-ms = <QUICK_TAP_MS>;
       require-prior-idle-ms = <REQUIRE_PRIOR_IDLE_MS>;
-      hold-trigger-on-release;
-      hold-trigger-key-positions = <KEYS_L THUMBS>;
-    };
-
-    // Shift homerow mod for right hand
-    hmsr: hmsr {
-      label = "ZB_hmsr";
-      compatible = "zmk,behavior-hold-tap";
-      #binding-cells = <2>;
-      flavor = "tap-preferred";
-      bindings = <&kp>, <&kp>;
-      tapping-term-ms = <TAP_TERM_MS>;
-      quick-tap-ms = <QUICK_TAP_MS>;
       hold-trigger-on-release;
       hold-trigger-key-positions = <KEYS_L THUMBS>;
     };
@@ -200,7 +174,7 @@
       //                                           ├ ESC / LY_FN ┼ TAB / LY_MS1┼ SPC / LY_NAV┤ ├ SS / LY_NUM ┼BKSP / LY_MS2┼    ENTER    ┤
       //                                           ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
           &none         &kp SQT       &kp COMMA     &kp DOT       &kp P         &kp Y           &kp F         &kp G         &kp C         &kp R         &kp L         &none
-          &none         &hmsl LSHFT A &hml LALT O   &hml LGUI E   &hml LCTRL U  &kp I           &kp D         &hmr LCTRL H  &hmr LGUI T   &hmr LALT N   &hmsr LSHFT S &none
+          &none         &hml LSHFT A  &hml LALT O   &hml LGUI E   &hml LCTRL U  &kp I           &kp D         &hmr LCTRL H  &hmr LGUI T   &hmr LALT N   &hmr LSHFT S  &none
           &none         &kp SEMI      &hml RALT Q   &kp J         &kp K         &kp X           &kp B         &kp M         &kp W         &hmr RALT V   &kp Z         &none
                                                     THUMB1        THUMB2        THUMB3          THUMB4        THUMB5        THUMB6
       >;
@@ -219,7 +193,7 @@
       //                                           ├     ESC     ┼     TAB     ┼    SPACE    ┤ ├ // HELD //  ┼             ┼             ┤
       //                                           ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
           &none         &kp EXCL       &kp AT       &kp HASH      &kp DOLLAR    &kp PERCENT     &kp CARET     &kp AMPS      &kp ASTRK     &kp LPAR      &kp RPAR       &none
-          &none         &hmsl LSHFT N1 &hml LALT N2 &hml LGUI N3  &hml LCTRL N4 &kp N5          &kp N6        &hmr LCTRL N7 &hmr LGUI N8  &hmr LALT N9  &hmsr LSHFT N0 &none
+          &none         &hml LSHFT N1  &hml LALT N2 &hml LGUI N3  &hml LCTRL N4 &kp N5          &kp N6        &hmr LCTRL N7 &hmr LGUI N8  &hmr LALT N9  &hmr LSHFT N0  &none
           &none         &none          &kp GRAVE    &kp LBKT      &kp RBKT      &kp DOT         &kp BSLH      &kp FSLH      &kp EQUAL     &kp PLUS      &kp MINUS      &none
                                                     &kp ESC       &kp TAB       &kp SPACE       &trans        &none         &none
       >;
@@ -294,10 +268,10 @@
       // ╰───────────────────────────┴─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┴───────────────────────────╯
       //                                           ├ // HELD //  ┼ System Layer┼ Discord PTT ┤ ├             ┼             ┼             ┤
       //                                           ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
-          &none         &kp F1        &kp F2        &kp F3        &kp F4        &kp PS_BRK      &kp INSERT    &kp F13       &kp F14       &kp F15       &kp F16       &none
-          &none         &hmsl LSHFT F5 &hml LALT F6 &hml LGUI F7  &hml LCTRL F8 &kp PSCRN       &kp SLCK      &hmr LCTRL F17 &hmr LGUI F18 &hmr LALT F19 &hmsr LSHFT F20 &none
-          &none         &kp F9        &kp F10       &kp F11       &kp F12       &kp CAPS        &none         &kp F21       &kp F22       &kp F23       &kp F24       &none
-                                                    &trans        &sl LY_SYS    &kp CA_LSFT     &none         &none         &none
+          &none         &kp F1        &kp F2        &kp F3        &kp F4        &kp PS_BRK      &kp INSERT    &kp F13        &kp F14       &kp F15       &kp F16       &none
+          &none         &hml LSHFT F5 &hml LALT F6  &hml LGUI F7  &hml LCTRL F8 &kp PSCRN       &kp SLCK      &hmr LCTRL F17 &hmr LGUI F18 &hmr LALT F19 &hmr LSHFT F20 &none
+          &none         &kp F9        &kp F10       &kp F11       &kp F12       &kp CAPS        &none         &kp F21        &kp F22       &kp F23       &kp F24       &none
+                                                    &trans        &sl LY_SYS    &kp CA_LSFT     &none         &none          &none
       >;
     };
 
