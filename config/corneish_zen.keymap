@@ -203,17 +203,17 @@
       label = "NAV";
       bindings = <
       // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-      // ├             ┼ WIN PRV MON ┼ SNP WIN LFT ┼ SNP WIN RGT ┼ WIN NXT MON ┼  Alt + F4   ┤ ├             ┼ CONTEXT MENU┼             ┼ PRV VIR DSK ┼ NXT VIR DSK ┼             ┤
+      // ├             ┼ WIN PRV MON ┼ SNP WIN LFT ┼ SNP WIN RGT ┼ WIN NXT MON ┼  Alt + F4   ┤ ├             ┼             ┼             ┼ PRV VIR DSK ┼ NXT VIR DSK ┼             ┤
       // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-      // ├             ┼    LSHFT    ┼     LALT    ┼     LGUI    ┼    LCTRL    ┼ PwrToys Run ┤ ├             ┼    LEFT     ┼     UP      ┼     DOWN    ┼    RIGHT    ┼             ┤
+      // ├             ┼    LSHFT    ┼     LALT    ┼     LGUI    ┼    LCTRL    ┼ PwrToys Run ┤ ├ CONTEXT MENU┼    LEFT     ┼     UP      ┼     DOWN    ┼    RIGHT    ┼             ┤
       // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
       // ├             ┼ Win Explorer┼             ┼  PREV TAB   ┼  NEXT TAB   ┼ CTRL ALT TAB┤ ├     SPC     ┼    HOME     ┼   PAGE UP   ┼  PAGE DOWN  ┼     END     ┼             ┤
       // ╰───────────────────────────┴─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┴───────────────────────────╯
       //                                           ├             ┼             ┼ // HELD //  ┤ ├     BKSP    ┼     DEL     ┼             ┤
       //                                           ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
-          &none         &kp GS_LFT    &kp G_LFT     &kp G_RGT     &kp GS_RGT    &kp LA(F4)      &none         &kp K_APP     &none          &kp PRV_VD   &kp NXT_VD    &none
-          &none         &kp LSHFT     &kp LALT      &kp LGUI      &kp LCTRL     &kp PTOYS_RUN   &none         &kp LEFT      &kp UP         &kp DOWN     &kp RIGHT     &none
-          &none         &kp LG(E)     &none         &kp PRV_TAB   &kp NXT_TAB   &kp CA_TAB      &kp SPACE     &kp HOME      &kp PG_UP      &kp PG_DN    &kp END       &none
+          &none         &kp GS_LFT    &kp G_LFT     &kp G_RGT     &kp GS_RGT    &kp LA(F4)      &none         &none         &none         &kp PRV_VD    &kp NXT_VD    &none
+          &none         &kp LSHFT     &kp LALT      &kp LGUI      &kp LCTRL     &kp PTOYS_RUN   &kp K_APP     &kp LEFT      &kp UP        &kp DOWN      &kp RIGHT     &none
+          &none         &kp LG(E)     &none         &kp PRV_TAB   &kp NXT_TAB   &kp CA_TAB      &kp SPACE     &kp HOME      &kp PG_UP     &kp PG_DN     &kp END       &none
                                                     &none         &none         &trans          &kp BSPC      &kp DEL       &none
       >;
     };
