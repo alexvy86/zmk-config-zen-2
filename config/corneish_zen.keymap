@@ -191,13 +191,13 @@
       // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
       // ├             ┼  LSHFT / 1  ┼  LALT / 2   ┼  LGUI / 3   ┼  LCTRL / 4  ┼      5      ┤ ├      6      ┼  LCTRL / 7  ┼  LGUI / 8   ┼  LALT / 9   ┼  LSHFT / 0  ┼             ┤
       // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-      // ├             ┼             ┼      `      ┼      [      ┼      ]      ┼      .      ┤ ├      \      ┼      /      ┼      =      ┼      +      ┼      -      ┼             ┤
+      // ├             ┼      ,      ┼      .      ┼      [      ┼      ]      ┼      `      ┤ ├      \      ┼      /      ┼      =      ┼      +      ┼      -      ┼             ┤
       // ╰───────────────────────────┴─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┴───────────────────────────╯
       //                                           ├     ESC     ┼     TAB     ┼    SPACE    ┤ ├ // HELD //  ┼             ┼             ┤
       //                                           ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
-          &none         &kp EXCL       &kp AT       &kp HASH      &kp DOLLAR    &kp PERCENT     &kp CARET     &kp AMPS      &kp ASTRK     &kp LPAR      &kp RPAR       &none
-          &none         &hml LSHFT N1  &hml LALT N2 &hml LGUI N3  &hml LCTRL N4 &kp N5          &kp N6        &hmr LCTRL N7 &hmr LGUI N8  &hmr LALT N9  &hmr LSHFT N0  &none
-          &none         &none          &kp GRAVE    &kp LBKT      &kp RBKT      &kp DOT         &kp BSLH      &kp FSLH      &kp EQUAL     &kp PLUS      &kp MINUS      &none
+          &none         &kp EXCL      &kp AT        &kp HASH      &kp DOLLAR    &kp PERCENT     &kp CARET     &kp AMPS      &kp ASTRK     &kp LPAR      &kp RPAR       &none
+          &none         &hml LSHFT N1 &hml LALT N2  &hml LGUI N3  &hml LCTRL N4 &kp N5          &kp N6        &hmr LCTRL N7 &hmr LGUI N8  &hmr LALT N9  &hmr LSHFT N0  &none
+          &none         &kp COMMA     &kp DOT       &kp LBKT      &kp RBKT      &kp GRAVE       &kp BSLH      &kp FSLH      &kp EQUAL     &kp PLUS      &kp MINUS      &none
                                                     &kp ESC       &kp TAB       &kp SPACE       &trans        &none         &none
       >;
     };
