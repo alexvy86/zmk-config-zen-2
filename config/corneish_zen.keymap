@@ -40,7 +40,7 @@
 #define NXT_TERM  LC(PG_DN)
 #define OPSWD_BRW LC(LS(X))
 #define OPSWD_WIN LC(LS(SPACE))
-#define PTOYS_RUN LG(LS(SPACE))
+#define PTOYS_RUN LG(LC(SPACE))
 
 // Layers
 #define LY_BASE 0
